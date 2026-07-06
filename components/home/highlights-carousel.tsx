@@ -108,7 +108,7 @@ export function HighlightsCarousel() {
                 onClick={() => scrollTo(index - 1)}
                 disabled={index === 0}
                 aria-label="Anterior"
-                className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-[var(--ember)]/50 hover:bg-secondary disabled:opacity-40"
+                className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-primary/50 hover:bg-secondary disabled:opacity-40"
               >
                 <ArrowLeft className="size-4" />
               </button>
@@ -117,7 +117,7 @@ export function HighlightsCarousel() {
                 onClick={() => scrollTo(index + 1)}
                 disabled={index === PROJECTS.length - 1}
                 aria-label="Próximo"
-                className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-[var(--ember)]/50 hover:bg-secondary disabled:opacity-40"
+                className="inline-flex size-11 items-center justify-center rounded-full border border-border bg-card transition-colors hover:border-primary/50 hover:bg-secondary disabled:opacity-40"
               >
                 <ArrowRight className="size-4" />
               </button>
@@ -151,13 +151,13 @@ export function HighlightsCarousel() {
 
               {/* Barra ember que preenche no topo ao hover */}
               <span
-                className="absolute left-0 top-0 z-10 h-0.5 w-0 bg-[var(--ember)] transition-all duration-300 group-hover:w-full"
+                className="absolute left-0 top-0 z-10 h-0.5 w-0 bg-[var(--primary)] transition-all duration-300 group-hover:w-full"
                 aria-hidden
               />
 
               {/* Contador no canto superior */}
               <div className="absolute left-5 top-5 flex items-center gap-2 font-mono text-xs text-white/70">
-                <span className="text-[var(--ember)]">{String(i + 1).padStart(2, "0")}</span>
+                <span className="text-[var(--primary)]">{String(i + 1).padStart(2, "0")}</span>
                 <span className="uppercase tracking-widest">
                   {p.category}
                   {p.year ? ` · ${p.year}` : ""}
@@ -171,7 +171,7 @@ export function HighlightsCarousel() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Abrir ${p.name}`}
-                  className="absolute right-5 top-5 inline-flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur transition-colors hover:border-[var(--ember)]/60 hover:bg-[var(--ember)]/20"
+                  className="absolute right-5 top-5 inline-flex size-9 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur transition-colors hover:border-[var(--primary)]/60 hover:bg-[var(--primary)]/20"
                 >
                   <ArrowUpRight className="size-4" />
                 </a>
@@ -186,13 +186,13 @@ export function HighlightsCarousel() {
 
                 {/* Hairline que desenha da esquerda pra direita no hover, separando descrição da stack */}
                 <span
-                  className="mt-4 block h-px w-0 bg-[var(--ember)]/50 transition-all duration-500 ease-out group-hover:w-full"
+                  className="mt-4 block h-px w-0 bg-[var(--primary)]/50 transition-all duration-500 ease-out group-hover:w-full"
                   aria-hidden
                 />
 
                 {/* Stack — some por padrão, revela em mono no hover */}
                 <p
-                  className="mt-3 translate-y-1 font-mono text-[11px] uppercase tracking-widest text-white/0 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:text-[var(--ember)] group-hover:opacity-100"
+                  className="mt-3 translate-y-1 font-mono text-[11px] uppercase tracking-widest text-white/0 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:text-[var(--primary)] group-hover:opacity-100"
                 >
                   {p.stack.join("  ·  ")}
                 </p>
@@ -209,7 +209,7 @@ export function HighlightsCarousel() {
               onClick={() => scrollTo(i)}
               aria-label={`Ir para o projeto ${i + 1}`}
               className={`h-1 rounded-full transition-all ${
-                i === index ? "w-8 bg-[var(--ember)]" : "w-4 bg-border"
+                i === index ? "w-8 bg-[var(--primary)]" : "w-4 bg-border"
               }`}
             />
           ))}

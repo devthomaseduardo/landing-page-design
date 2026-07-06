@@ -37,26 +37,25 @@
 
 :root {
   color-scheme: dark;
-  /* Core palette: near-black background, off-white foreground, cold grays */
-  --background: oklch(0.09 0 0);
-  --foreground: oklch(0.97 0 0);
-  --card: oklch(0.13 0 0);
-  --card-foreground: oklch(0.97 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.72 0.19 158);
-  --primary-foreground: oklch(0.09 0 0);
-  --secondary: oklch(0.18 0 0);
-  --secondary-foreground: oklch(0.97 0 0);
-  --muted: oklch(0.16 0 0);
-  --muted-foreground: oklch(0.62 0 0);
-  --accent: oklch(0.2 0 0);
-  --accent-foreground: oklch(0.98 0 0);
+  /* Core palette: Black background, White foreground, Gray elements */
+  --background: #0B0B0B;
+  --foreground: #FFFFFF;
+  --card: #18181B; /* Dark gray for card */
+  --card-foreground: #FFFFFF;
+  --popover: #0B0B0B;
+  --popover-foreground: #FFFFFF;
+  --primary: #1D4ED8; /* Darker Accent Blue */
+  --primary-foreground: #FFFFFF;
+  --secondary: #18181B; /* Dark gray */
+  --secondary-foreground: #FFFFFF;
+  --muted: #18181B; /* Dark gray */
+  --muted-foreground: #71717A; /* Gray */
+  --accent: #27272A; /* Border/Accent color */
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.62 0.2 25);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.72 0.19 158);
-  --ember: oklch(0.72 0.19 158);
+  --border: #27272A; /* Border */
+  --input: #27272A; /* Border/Input color */
+  --ring: #1D4ED8; /* Darker Accent Blue */
   --radius: 0.5rem;
 }
 
@@ -73,12 +72,15 @@
     text-rendering: optimizeLegibility;
   }
   ::selection {
-    background: oklch(0.72 0.19 158);
-    color: oklch(0.1 0 0);
+    background: #1D4ED8;
+    color: #FFFFFF;
   }
 }
 
 @layer utilities {
+  .bg-primary-gradient {
+    background: linear-gradient(to right, #1D4ED8, #3B82F6);
+  }
   .font-display {
     font-family: var(--font-display);
   }

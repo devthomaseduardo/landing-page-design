@@ -26,14 +26,14 @@ function MarqueeRow({
           <span
             className={`group/item flex items-baseline gap-2 whitespace-nowrap font-mono uppercase tracking-widest transition-colors duration-300 ${size} ${
               muted ? "text-muted-foreground/45" : "text-muted-foreground"
-            } hover:text-[var(--ember)]`}
+            } hover:text-[var(--primary)]`}
           >
-            <span className="text-[0.55em] font-normal text-[var(--ember)]/60 transition-colors group-hover/item:text-[var(--ember)]">
+            <span className="text-[0.55em] font-normal text-[var(--primary)]/60 transition-colors group-hover/item:text-[var(--primary)]">
               {String((i % STACK.length) + 1).padStart(2, "0")}
             </span>
             {tech}
           </span>
-          <span aria-hidden className="h-1 w-1 rounded-full bg-[var(--ember)]/40" />
+          <span aria-hidden className="h-1 w-1 rounded-full bg-[var(--primary)]/40" />
         </div>
       ))}
     </div>
@@ -51,7 +51,7 @@ export function StackMarquee() {
 
       <div className="mx-auto mb-7 flex max-w-6xl items-center justify-between px-5">
         <div className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--ember)]" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
           Stack
         </div>
         <span className="font-mono text-xs text-muted-foreground/60">

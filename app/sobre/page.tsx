@@ -46,7 +46,7 @@ const FOCUS = ["Full Stack", "Sistemas", "Automações", "APIs"]
 function SectionDivider({ index, label }: { index: string; label: string }) {
   return (
     <div className="mx-auto flex max-w-6xl items-center gap-4 px-5 py-10 sm:py-14">
-      <span className="font-mono text-xs tracking-widest text-[var(--ember)]">{index}</span>
+      <span className="font-mono text-xs tracking-widest text-[var(--primary)]">{index}</span>
       <span className="h-px flex-1 bg-gradient-to-r from-border via-border to-transparent" />
       <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{label}</span>
     </div>
@@ -67,7 +67,7 @@ export default function SobrePage() {
         <div className="flex-1 px-5 py-20 sm:py-28 lg:flex lg:max-w-[58%] lg:items-center lg:py-0">
           <Reveal className="mx-auto w-full max-w-2xl lg:mx-0 lg:ml-auto lg:pr-12 xl:pr-16">
             <div className="mb-6 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--ember)]" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
               Perfil — 01
             </div>
 
@@ -91,7 +91,7 @@ export default function SobrePage() {
               {FOCUS.map((f) => (
                 <span
                   key={f}
-                  className="rounded-full border border-border bg-card px-4 py-1.5 text-sm transition-colors hover:border-[var(--ember)]/50"
+                  className="rounded-full border border-border bg-card px-4 py-1.5 text-sm transition-colors hover:border-[var(--primary)]/50"
                 >
                   {f}
                 </span>
@@ -122,7 +122,7 @@ export default function SobrePage() {
 
           {/* Legenda estilo "status rail" no canto */}
           <div className="absolute bottom-6 left-6 flex items-center gap-2 font-mono text-[11px] uppercase tracking-widest text-white/80 lg:bottom-8 lg:left-8">
-            <span className="h-1.5 w-1.5 rounded-full bg-[var(--ember)]" />
+            <span className="h-1.5 w-1.5 rounded-full bg-[var(--primary)]" />
             São Paulo, BR
           </div>
         </div>
@@ -141,11 +141,11 @@ export default function SobrePage() {
                 className="group relative grid gap-2 bg-card p-6 pl-8 sm:grid-cols-[220px_1fr] sm:gap-8"
               >
                 <span
-                  className="absolute inset-y-0 left-0 w-0.5 bg-[var(--ember)] opacity-0 transition-opacity group-hover:opacity-100"
+                  className="absolute inset-y-0 left-0 w-0.5 bg-[var(--primary)] opacity-0 transition-opacity group-hover:opacity-100"
                   aria-hidden
                 />
                 <span className="font-mono text-sm text-muted-foreground">
-                  <span className="mr-2 text-[var(--ember)]">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="mr-2 text-[var(--primary)]">{String(i + 1).padStart(2, "0")}</span>
                   {t.period}
                 </span>
                 <div>
@@ -167,7 +167,7 @@ export default function SobrePage() {
             <Reveal
               key={s}
               delay={i * 30}
-              className="rounded-lg border border-border bg-card px-4 py-2 font-mono text-sm text-foreground/85 transition-colors hover:border-[var(--ember)]/50 hover:text-foreground"
+              className="rounded-lg border border-border bg-card px-4 py-2 font-mono text-sm text-foreground/85 transition-colors hover:border-[var(--primary)]/50 hover:text-foreground"
             >
               {s}
             </Reveal>
@@ -178,7 +178,7 @@ export default function SobrePage() {
           {DIFERENCIAIS.map((d, i) => (
             <Reveal key={d.title} delay={i * 70} className="group relative bg-card p-6">
               <span
-                className="absolute left-0 top-0 h-0.5 w-0 bg-[var(--ember)] transition-all duration-300 group-hover:w-full"
+                className="absolute left-0 top-0 h-0.5 w-0 bg-[var(--primary)] transition-all duration-300 group-hover:w-full"
                 aria-hidden
               />
               <h3 className="font-display text-base font-semibold">{d.title}</h3>

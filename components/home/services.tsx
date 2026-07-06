@@ -15,22 +15,20 @@ export function Services() {
 
         <div className="mt-10 grid gap-4 sm:mt-14 md:grid-cols-3">
           {SERVICES.map((s, i) => (
-            <Reveal
-              key={s.title}
-              delay={i * 90}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-5 transition-colors hover:border-foreground/25 sm:p-7"
-            >
-              <span className="font-mono text-sm text-muted-foreground">0{i + 1}</span>
-              <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
-              <ul className="mt-5 hidden space-y-2.5 pt-2 sm:block">
-                {s.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2.5 text-sm">
-                    <Check className="size-4 shrink-0 text-foreground" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+            <Reveal key={s.title} delay={i * 90}>
+              <div className="group flex flex-col rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary sm:p-7">
+                <span className="font-mono text-sm text-muted-foreground">0{i + 1}</span>
+                <h3 className="mt-4 font-display text-xl font-semibold tracking-tight">{s.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.description}</p>
+                <ul className="mt-5 hidden space-y-2.5 pt-2 sm:block">
+                  {s.features.map((f) => (
+                    <li key={f} className="flex items-center gap-2.5 text-sm">
+                      <Check className="size-4 shrink-0 text-foreground" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           ))}
         </div>

@@ -54,7 +54,7 @@ export default function CurriculoPage() {
 
       {/* Cabeçalho */}
       <header className="border-b border-border pb-6 print:border-black/20">
-        <p className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <p className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Currículo
         </p>
         <h1 className="mt-2 font-display text-4xl font-bold text-foreground print:text-black">
@@ -76,7 +76,7 @@ export default function CurriculoPage() {
 
       {/* Resumo */}
       <section className="mt-8">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Resumo
         </h2>
         <p className="mt-3 text-sm leading-relaxed text-foreground/85 print:text-black">
@@ -89,7 +89,7 @@ export default function CurriculoPage() {
 
       {/* Experiência */}
       <section className="mt-8">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Experiência e formação
         </h2>
         <div className="mt-4 space-y-5">
@@ -107,7 +107,7 @@ export default function CurriculoPage() {
 
       {/* Projetos em destaque */}
       <section className="mt-8">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Projetos em destaque
         </h2>
         <div className="mt-4 space-y-5">
@@ -122,7 +122,7 @@ export default function CurriculoPage() {
 
       {/* Stack */}
       <section className="mt-8">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Stack
         </h2>
         <div className="mt-3 flex flex-wrap gap-2 print:gap-1.5">
@@ -139,7 +139,7 @@ export default function CurriculoPage() {
 
       {/* Diferenciais */}
       <section className="mt-8 mb-16 print:mb-0">
-        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--ember)] print:text-black/60">
+        <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] print:text-black/60">
           Diferenciais
         </h2>
         <div className="mt-3 grid grid-cols-2 gap-4">

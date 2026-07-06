@@ -83,7 +83,7 @@ export const PROJECTS: Project[] = [
       "Sistema administrativo para operação comercial, com módulos de projetos, clientes, propostas, financeiro, contratos e leads.",
     bullets: ["Dashboard administrativo", "Módulos internos", "Controle de acesso"],
     stack: ["Next.js", "Node.js", "PostgreSQL", "Prisma"],
-    image: "/projects/gestao.png",
+    image: "/projects/mokup-hazap.png",
   },
 ]
 
