@@ -11,14 +11,6 @@ export function Hero() {
       <Script
         src="https://embed.mckp.live/embed.js"
         strategy="afterInteractive"
-        onLoad={() => {
-          const player = document.querySelector("mockup-player")
-
-          if (player) {
-            player.setAttribute("autoplay", "true")
-            player.setAttribute("loop", "true")
-          }
-        }}
       />
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -27,16 +19,15 @@ export function Hero() {
         <mockup-player
           mockup-id="48991589-86a0-4a9d-b5df-5f3ce547e4b9"
           aspect-ratio="16 / 9"
-          autoplay="true"
-          loop="true"
-          trigger="auto"
-          trigger-target="object"
+          trigger="load"
+          trigger-loop="true"
           cursor-affect-page="false"
           cursor-range="6-55-4-58"
           camera-zoom="39"
           style={{
             width: "100%",
             height: "100%",
+            display: "block",
             pointerEvents: "none",
           }}
         />
