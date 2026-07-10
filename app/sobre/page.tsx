@@ -199,7 +199,7 @@ export default function SobrePage() {
           {/* Imagem lateral com projeto real */}
           <div className="about-image-block relative hidden lg:block"
           >
-            <div className="overflow-hidden aspect-[3/4]">
+            <div className="relative overflow-hidden aspect-[3/4]">
               <Image
                 src="/thomas-about.png"
                 alt="Desenvolvimento de sistemas"

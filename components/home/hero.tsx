@@ -37,7 +37,7 @@ export function Hero() {
   const scalePortrait = useTransform(scrollYProgress, [0, 0.3, 0.6], [0.8, 0.8, 1])
 
   return (
-    <div ref={containerRef} className="relative h-[180vh] w-full bg-background">
+    <div ref={containerRef} className="relative h-[140vh] sm:h-[180vh] w-full bg-background">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
         {/* Vídeo de fundo com máscara radial dinâmica (Siena Parallax) */}

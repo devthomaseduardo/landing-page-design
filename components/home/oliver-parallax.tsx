@@ -64,8 +64,8 @@ export function OliverParallax() {
       >
         <Column images={[IMAGES[0], IMAGES[1], IMAGES[2]]} y={y} topClass="-top-[15%]" />
         <Column images={[IMAGES[3], IMAGES[4], IMAGES[5]]} y={y2} topClass="-top-[30%]" />
-        <Column images={[IMAGES[6], IMAGES[7], IMAGES[8]]} y={y3} topClass="-top-[10%]" />
-        <Column images={[IMAGES[9], IMAGES[10], IMAGES[11]]} y={y4} topClass="-top-[25%]" />
+        <Column images={[IMAGES[6], IMAGES[7], IMAGES[8]]} y={y3} topClass="-top-[10%]" className="hidden sm:flex" />
+        <Column images={[IMAGES[9], IMAGES[10], IMAGES[11]]} y={y4} topClass="-top-[25%]" className="hidden md:flex" />
       </div>
     </section>
   )
@@ -75,13 +75,14 @@ interface ColumnProps {
   images: string[]
   y: any
   topClass?: string
+  className?: string
 }
 
-function Column({ images, y, topClass = "top-0" }: ColumnProps) {
+function Column({ images, y, topClass = "top-0", className = "" }: ColumnProps) {
   return (
     <motion.div 
       style={{ y }}
-      className={`relative w-1/4 h-full flex flex-col gap-[2vw] min-w-[120px] sm:min-w-[240px] ${topClass}`}
+      className={`relative w-1/2 sm:w-1/3 md:w-1/4 h-full flex flex-col gap-[2vw] min-w-[120px] sm:min-w-[240px] ${topClass} ${className}`}
     >
       {images.map((src, idx) => (
         <div 
