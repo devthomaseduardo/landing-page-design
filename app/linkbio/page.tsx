@@ -7,6 +7,23 @@ import Script from "next/script"
 import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { CONTACT } from "@/lib/data"
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "mockup-player": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        "mockup-id"?: string;
+        "aspect-ratio"?: string;
+        trigger?: string;
+        "trigger-target"?: string;
+        "cursor-affect-page"?: string;
+        "cursor-range"?: string;
+        "camera-zoom"?: string;
+        "hide-watermark"?: string;
+      };
+    }
+  }
+}
+
 export const metadata: Metadata = {
   title: `Links | ${CONTACT.name}`,
   description: "Meus links e redes sociais.",
@@ -64,7 +81,7 @@ export default function LinkBioPage() {
           cursor-range="1-50-7-50"
           camera-zoom="36"
           hide-watermark="true"
-        ></mockup-player>
+        />
       </div>
       <div className="absolute inset-0 z-0 opacity-30 blur-3xl">
         <Image src="/logo-mark.png" alt="Background" fill className="object-cover" priority />
@@ -91,9 +108,9 @@ export default function LinkBioPage() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative flex items-center gap-4 overflow-hidden rounded-2xl border p-4 transition-all hover:-translate-y-1 hover:shadow-lg ${link.primary
-                ? "border-primary/50 bg-primary/5 hover:border-primary hover:bg-primary/10"
-                : "border-border bg-card hover:border-foreground/20 hover:bg-muted/50"
+              className={`group relative flex items-center gap-4 overflow-hidden rounded-3xl border p-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(37,99,235,0.3)] ${link.primary
+                ? "border-blue-500/50 bg-gradient-to-r from-blue-950/40 to-black hover:border-blue-500 hover:from-blue-900/50 hover:to-black"
+                : "border-border/40 bg-card/40 hover:border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-950/20 hover:to-transparent"
                 }`}
             >
               {link.image ? (
@@ -102,9 +119,9 @@ export default function LinkBioPage() {
                 </div>
               ) : (
                 <div
-                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-colors ${link.primary
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary text-secondary-foreground group-hover:bg-foreground group-hover:text-background"
+                  className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-[1rem] transition-colors ${link.primary
+                    ? "bg-gradient-to-br from-blue-600 to-indigo-600 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]"
+                    : "bg-secondary/40 text-muted-foreground group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(37,99,235,0.4)]"
                     }`}
                 >
                   <link.icon className="size-5" />

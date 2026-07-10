@@ -1,112 +1,103 @@
 "use client"
 
 import { useState } from "react"
-import { Minus, Plus, Hourglass, Calendar } from "lucide-react"
+import { Minus, Plus, MonitorSmartphone, ShoppingCart, Globe, Briefcase } from "lucide-react"
 
 const RATE = 20
-const HOURS_PER_DAY = 8
+
+const PRESETS = [
+  { label: "Landing Page", icon: Globe, hours: 6 },
+  { label: "Site Inst.", icon: Briefcase, hours: 16 },
+  { label: "E-commerce", icon: ShoppingCart, hours: 40 },
+  { label: "Sistema Web", icon: MonitorSmartphone, hours: 80 },
+]
 
 const BRL = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 })
 
 export function PriceCalculator() {
-  const [mode, setMode] = useState<"hours" | "days">("hours")
-  const [value, setValue] = useState(6)
+  const [hours, setHours] = useState(6)
 
-  const hours = mode === "hours" ? value : value * HOURS_PER_DAY
   const total = hours * RATE
 
   const wa = `https://wa.me/5511977070209?text=${encodeURIComponent(
-    `Olá Thomas, tenho interesse em um projeto de aproximadamente ${hours}h (${mode === "days" ? `${value} dias` : `${value} horas`}, estimativa ${BRL.format(total)}). Podemos conversar?`,
+    `Olá Thomas, fiz uma estimativa inicial no site para um projeto de aproximadamente ${hours}h (${BRL.format(total)}). Podemos conversar sobre o escopo?`,
   )}`
 
   return (
-    <div className="rounded-2xl border border-border bg-card p-7 sm:p-9">
-      <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Simulador</p>
-      <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">Estime o seu projeto</h3>
+    <div className="rounded-[2rem] border border-border/50 bg-card/40 backdrop-blur-xl p-7 sm:p-9 shadow-2xl">
+      <p className="font-mono text-xs uppercase tracking-[0.3em] text-blue-400">Simulador</p>
+      <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+        Estime o seu projeto
+      </h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-        Valor base de <span className="font-mono text-foreground">{BRL.format(RATE)}/hora</span>.
+        Valor base de <span className="font-mono text-blue-300">{BRL.format(RATE)}/hora</span>.
       </p>
 
-      <div className="mt-6 flex gap-2">
-        <button
-          onClick={() => {
-            if (mode === "days") {
-              setMode("hours")
-              setValue(value * HOURS_PER_DAY)
-            }
-          }}
-          className={`flex-1 flex items-center justify-center gap-2 rounded-lg py-2 text-sm ${mode === "hours" ? "bg-foreground text-background" : "bg-secondary text-muted-foreground"}`}
-        >
-          <Hourglass className="size-4" /> Horas
-        </button>
-        <button
-          onClick={() => {
-            if (mode === "hours") {
-              setMode("days")
-              setValue(Math.max(1, Math.round(value / HOURS_PER_DAY)))
-            }
-          }}
-          className={`flex-1 flex items-center justify-center gap-2 rounded-lg py-2 text-sm ${mode === "days" ? "bg-foreground text-background" : "bg-secondary text-muted-foreground"}`}
-        >
-          <Calendar className="size-4" /> Dias
-        </button>
+      {/* PRESETS INTELIGENTES */}
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:gap-4">
+        {PRESETS.map((p) => {
+          const isSelected = hours === p.hours
+          return (
+            <button
+              key={p.label}
+              onClick={() => setHours(p.hours)}
+              className={`flex flex-col items-center gap-3 rounded-2xl border p-5 text-sm transition-all ${
+                isSelected
+                  ? "border-blue-500/50 bg-blue-500/10 text-blue-400 shadow-[0_0_20px_-5px_rgba(37,99,235,0.3)]"
+                  : "border-border/40 bg-background/30 text-muted-foreground hover:bg-card/80 hover:border-border/80"
+              }`}
+            >
+              <p.icon className={`size-6 ${isSelected ? "text-blue-400" : "text-muted-foreground/60"}`} />
+              <span className="font-medium tracking-wide">{p.label}</span>
+            </button>
+          )
+        })}
       </div>
 
-      <div className="mt-8 flex items-center justify-between rounded-xl border border-border bg-background/40 p-5">
+      <div className="mt-6 flex items-center justify-between rounded-2xl border border-border/40 bg-background/40 p-5">
         <div>
-          <p className="text-sm text-muted-foreground">{mode === "hours" ? "Horas estimadas" : "Dias estimados"}</p>
-          <p className="mt-1 font-display text-3xl font-bold">
-            {value}{mode === "hours" ? "h" : "d"}
-          </p>
+          <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-1">Horas estimadas</p>
+          <div className="flex items-baseline gap-1">
+            <span className="font-display text-4xl font-bold text-foreground">{hours}</span>
+            <span className="text-lg text-muted-foreground">h</span>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => setValue((v) => Math.max(1, v - 1))}
-            aria-label="Diminuir"
-            className="inline-flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:bg-secondary"
+            onClick={() => setHours((v) => Math.max(1, v - 1))}
+            className="inline-flex size-12 items-center justify-center rounded-full border border-border/40 bg-card/60 transition-colors hover:bg-card hover:text-foreground hover:border-border"
           >
             <Minus className="size-4" />
           </button>
           <button
             type="button"
-            onClick={() => setValue((v) => Math.min(mode === "hours" ? 80 : 10, v + 1))}
-            aria-label="Aumentar"
-            className="inline-flex size-11 items-center justify-center rounded-full border border-border transition-colors hover:bg-secondary"
+            onClick={() => setHours((v) => v + 1)}
+            className="inline-flex size-12 items-center justify-center rounded-full border border-border/40 bg-card/60 transition-colors hover:bg-card hover:text-foreground hover:border-border"
           >
             <Plus className="size-4" />
           </button>
         </div>
       </div>
 
-      <input
-        type="range"
-        min={1}
-        max={mode === "hours" ? 80 : 10}
-        value={value}
-        onChange={(e) => setValue(Number(e.target.value))}
-        aria-label="Ajustar"
-        className="mt-5 w-full accent-[var(--foreground)]"
-      />
-      <div className="mt-2 flex justify-between font-mono text-xs text-muted-foreground">
-        <span>1{mode === "hours" ? "h" : "d"}</span>
-        <span>{mode === "hours" ? "80h" : "10d"}</span>
-      </div>
-
-      <div className="mt-8 flex items-end justify-between border-t border-border pt-6">
-        <span className="text-sm text-muted-foreground">Estimativa ({hours}h)</span>
-        <span className="font-display text-4xl font-bold">{BRL.format(total)}</span>
+      <div className="mt-8 flex items-end justify-between border-t border-border/30 pt-6">
+        <div className="flex flex-col">
+          <span className="text-sm text-muted-foreground">Estimativa total</span>
+          <span className="font-mono text-xs text-blue-400/60 mt-1">{hours}h × {BRL.format(RATE)}</span>
+        </div>
+        <span className="font-display text-4xl font-bold text-foreground">{BRL.format(total)}</span>
       </div>
 
       <a
         href={wa}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.02]"
+        className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full border border-blue-900/40 bg-gradient-to-r from-blue-950 to-black px-6 py-4 text-sm font-medium text-blue-200 transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(37,99,235,0.4)]"
       >
         Solicitar orçamento com essa base
       </a>
-      <p className="mt-3 text-center text-xs text-muted-foreground">
+      
+      <p className="mt-4 text-center text-xs text-muted-foreground/60 leading-relaxed max-w-xs mx-auto">
         Estimativa inicial — o valor final é fechado após alinharmos o escopo.
       </p>
     </div>

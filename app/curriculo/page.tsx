@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { PrintButton } from "@/components/print-button"
-import { Globe, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Globe, Mail, MapPin, Phone } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Currículo | Thomas Eduardo",
@@ -102,7 +102,7 @@ const CV_DATA = {
 
 export default function CurriculoPage() {
   return (
-    <main className="min-h-screen bg-[#F7F7F7] py-16 text-[#1A1A1A] print:bg-white print:py-0">
+    <main className="min-h-screen bg-background py-16 text-foreground print:bg-white print:py-0 print:text-black">
       <div className="mx-auto max-w-[210mm] px-4 sm:px-8 print:px-0">
 
         {/* Print Action */}
@@ -111,33 +111,33 @@ export default function CurriculoPage() {
         </div>
 
         {/* Paper Container */}
-        <div className="bg-white shadow-sm ring-1 ring-black/5 print:shadow-none print:ring-0">
+        <div className="rounded-[3rem] bg-card/50 border border-border/40 shadow-[0_0_50px_-15px_rgba(37,99,235,0.15)] print:rounded-none print:bg-white print:border-none print:shadow-none print:ring-0">
 
-          <div className="p-8 sm:p-12 print:p-8">
+          <div className="p-8 sm:p-12 lg:p-16 print:p-8">
 
             {/* Header */}
-            <header className="mb-10 flex flex-col gap-6 border-b border-black/10 pb-10 sm:flex-row sm:items-end sm:justify-between">
+            <header className="mb-10 flex flex-col gap-6 border-b border-border/60 pb-10 sm:flex-row sm:items-end sm:justify-between print:border-black/10">
               <div className="space-y-1">
-                <h1 className="font-display text-4xl font-bold tracking-tight text-black">
+                <h1 className="font-display text-4xl font-bold tracking-tight text-foreground print:text-black">
                   {CV_DATA.name}
                 </h1>
-                <p className="text-lg font-medium text-blue-600">
+                <p className="text-lg font-medium bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent print:text-blue-600">
                   {CV_DATA.role}
                 </p>
               </div>
 
-              <div className="flex flex-col gap-2 text-sm text-gray-600">
+              <div className="flex flex-col gap-2 text-sm text-muted-foreground print:text-gray-600">
                 <div className="flex items-center gap-2">
-                  <MapPin className="size-3.5 text-blue-600" /> {CV_DATA.location}
+                  <MapPin className="size-3.5 text-blue-500 print:text-blue-600" /> {CV_DATA.location}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Phone className="size-3.5 text-blue-600" /> {CV_DATA.phone}
+                  <Phone className="size-3.5 text-blue-500 print:text-blue-600" /> {CV_DATA.phone}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Mail className="size-3.5 text-blue-600" /> {CV_DATA.email}
+                  <Mail className="size-3.5 text-blue-500 print:text-blue-600" /> {CV_DATA.email}
                 </div>
                 <div className="flex items-center gap-2">
-                  <Globe className="size-3.5 text-blue-600" /> {CV_DATA.site}
+                  <Globe className="size-3.5 text-blue-500 print:text-blue-600" /> {CV_DATA.site}
                 </div>
               </div>
             </header>
@@ -156,24 +156,23 @@ export default function CurriculoPage() {
                   </p>
                 </section>
 
-                {/* Experiência */}
                 <section>
                   <SectionTitle>Experiência Profissional</SectionTitle>
                   <div className="space-y-6">
                     {CV_DATA.experience.map((exp) => (
                       <div key={exp.role}>
                         <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
-                          <h3 className="text-sm font-bold text-black">{exp.role}</h3>
-                          <span className="font-mono text-[11px] font-medium tracking-wide text-gray-500">
+                          <h3 className="text-sm font-bold text-foreground print:text-black">{exp.role}</h3>
+                          <span className="font-mono text-[11px] font-medium tracking-wide text-muted-foreground print:text-gray-500">
                             {exp.period}
                           </span>
                         </div>
-                        <p className="mb-3 text-[13px] font-medium text-blue-600">
+                        <p className="mb-3 text-[13px] font-medium text-blue-400 print:text-blue-600">
                           {exp.company}
                         </p>
                         <ul className="space-y-2">
                           {exp.achievements.map((item, i) => (
-                            <li key={i} className="relative pl-4 text-[13px] leading-relaxed text-gray-700 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-blue-600/60">
+                            <li key={i} className="relative pl-4 text-[13px] leading-relaxed text-muted-foreground print:text-gray-700 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-blue-500/60">
                               {item}
                             </li>
                           ))}
@@ -190,10 +189,10 @@ export default function CurriculoPage() {
                     {CV_DATA.projects.map((proj) => (
                       <div key={proj.name}>
                         <div className="flex flex-wrap items-baseline gap-2">
-                          <h3 className="text-[13px] font-bold text-black">{proj.name}</h3>
-                          <span className="text-[12px] text-gray-500">— {proj.tech}</span>
+                          <h3 className="text-[13px] font-bold text-foreground print:text-black">{proj.name}</h3>
+                          <span className="text-[12px] text-muted-foreground print:text-gray-500">— {proj.tech}</span>
                         </div>
-                        <p className="mt-1 text-[13px] leading-relaxed text-gray-700">
+                        <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground print:text-gray-700">
                           {proj.description}
                         </p>
                       </div>
@@ -211,16 +210,16 @@ export default function CurriculoPage() {
                   <SectionTitle>Competências Técnicas</SectionTitle>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">Frontend</h4>
-                      <p className="text-[13px] leading-relaxed text-gray-800">{CV_DATA.skills.frontend.join(", ")}</p>
+                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-muted-foreground/50 print:text-gray-400">Frontend</h4>
+                      <p className="text-[13px] leading-relaxed text-foreground/80 print:text-gray-800">{CV_DATA.skills.frontend.join(", ")}</p>
                     </div>
                     <div>
-                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">Backend</h4>
-                      <p className="text-[13px] leading-relaxed text-gray-800">{CV_DATA.skills.backend.join(", ")}</p>
+                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-muted-foreground/50 print:text-gray-400">Backend</h4>
+                      <p className="text-[13px] leading-relaxed text-foreground/80 print:text-gray-800">{CV_DATA.skills.backend.join(", ")}</p>
                     </div>
                     <div>
-                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-gray-400">Ferramentas</h4>
-                      <p className="text-[13px] leading-relaxed text-gray-800">{CV_DATA.skills.tools.join(", ")}</p>
+                      <h4 className="mb-1 text-[11px] font-bold uppercase tracking-widest text-muted-foreground/50 print:text-gray-400">Ferramentas</h4>
+                      <p className="text-[13px] leading-relaxed text-foreground/80 print:text-gray-800">{CV_DATA.skills.tools.join(", ")}</p>
                     </div>
                   </div>
                 </section>
@@ -231,9 +230,9 @@ export default function CurriculoPage() {
                   <div className="space-y-4">
                     {CV_DATA.education.map((edu) => (
                       <div key={edu.degree}>
-                        <h3 className="text-[13px] font-bold text-black">{edu.degree}</h3>
-                        <p className="mt-0.5 text-[13px] text-gray-600">{edu.institution}</p>
-                        <p className="mt-1 font-mono text-[11px] text-gray-500">{edu.period}</p>
+                        <h3 className="text-[13px] font-bold text-foreground print:text-black">{edu.degree}</h3>
+                        <p className="mt-0.5 text-[13px] text-muted-foreground print:text-gray-600">{edu.institution}</p>
+                        <p className="mt-1 font-mono text-[11px] text-muted-foreground/60 print:text-gray-500">{edu.period}</p>
                       </div>
                     ))}
                   </div>
@@ -245,8 +244,8 @@ export default function CurriculoPage() {
                   <ul className="space-y-3">
                     {CV_DATA.certifications.map((cert) => (
                       <li key={cert.name}>
-                        <div className="text-[13px] font-bold text-black">{cert.name}</div>
-                        <div className="text-[12px] text-gray-600">{cert.issuer}, {cert.year}</div>
+                        <div className="text-[13px] font-bold text-foreground print:text-black">{cert.name}</div>
+                        <div className="text-[12px] text-muted-foreground print:text-gray-600">{cert.issuer}, {cert.year}</div>
                       </li>
                     ))}
                   </ul>
@@ -258,8 +257,8 @@ export default function CurriculoPage() {
                   <ul className="space-y-2">
                     {CV_DATA.languages.map((lang) => (
                       <li key={lang.name} className="flex justify-between text-[13px]">
-                        <span className="font-semibold text-black">{lang.name}</span>
-                        <span className="text-gray-500">{lang.level}</span>
+                        <span className="font-semibold text-foreground print:text-black">{lang.name}</span>
+                        <span className="text-muted-foreground print:text-gray-500">{lang.level}</span>
                       </li>
                     ))}
                   </ul>
@@ -278,8 +277,8 @@ export default function CurriculoPage() {
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-5 border-b border-black/5 pb-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-black">
-      {children}
+    <h2 className="mb-5 border-b border-border/60 pb-2 font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-foreground print:text-black print:border-black/5">
+      <span className="text-blue-500 print:text-black mr-1">/</span> {children}
     </h2>
   )
 }

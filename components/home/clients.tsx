@@ -1,24 +1,38 @@
 import Image from "next/image"
 import { CLIENTS } from "@/lib/data"
-import { SectionHeading } from "@/components/section-heading"
+import { Reveal } from "@/components/reveal"
 
 export function Clients() {
   return (
-    <section className="relative mx-auto max-w-6xl px-5 py-20 sm:py-32">
-      <SectionHeading kicker="Clientes" title="Empresas que confiaram no meu trabalho" align="center" />
-      
-      <div className="mt-16 flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-        {CLIENTS.map((client) => (
-          <div key={client.name} className="relative h-12 w-32 md:h-16 md:w-40 transition-transform hover:scale-105">
-            <Image
-              src={client.logo}
-              alt={`Logo do cliente ${client.name}`}
-              fill
-              className="object-contain"
-            />
-          </div>
-        ))}
-      </div>
+    <section className="relative mx-auto max-w-6xl px-5 py-16 sm:py-24">
+
+      <Reveal>
+        <div className="mb-12 text-center">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Clientes</p>
+          <h2 className="mt-3 font-display text-2xl font-bold tracking-tight sm:text-3xl">
+            Empresas que confiaram no trabalho.
+          </h2>
+        </div>
+      </Reveal>
+
+      <Reveal delay={60}>
+        <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 grayscale transition-all duration-700 hover:opacity-80 hover:grayscale-0 md:gap-14">
+          {CLIENTS.map((client) => (
+            <div
+              key={client.name}
+              className="relative h-8 w-28 transition-transform duration-300 hover:scale-105 md:h-10 md:w-36"
+            >
+              <Image
+                src={client.logo}
+                alt={`${client.name}`}
+                fill
+                className="object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </Reveal>
+
     </section>
   )
 }

@@ -97,7 +97,7 @@ disabled:opacity-30
 
 
 <button
-disabled={index===PROJECTS.length-1}
+disabled={index===PROJECTS.slice(0, 3).length-1}
 onClick={()=>move(1)}
 className="
 size-11
@@ -138,7 +138,7 @@ scroll-smooth
 >
 
 
-{PROJECTS.map((project,i)=>(
+{PROJECTS.slice(0, 3).map((project,i)=>(
 
 
 <article

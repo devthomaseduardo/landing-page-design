@@ -1,97 +1,66 @@
-import type { Metadata } from "next"
+"use client"
+
 import Image from "next/image"
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
-
 import { PROJECTS } from "@/lib/data"
-import { SectionHeading } from "@/components/section-heading"
-
-export const metadata: Metadata = {
-  title: "Projetos | Thomas Eduardo",
-  description: "Conheça alguns dos meus principais trabalhos e projetos.",
-}
+import { motion } from "framer-motion"
+import { ClientsCarousel } from "@/components/home/clients-carousel"
+import { ProjectsStack } from "@/components/home/projects-stack"
+import { PageAnimator } from "@/components/page-animator"
 
 export default function ProjetosPage() {
   return (
-    <main className="min-h-screen pt-32 pb-20">
-      <div className="mx-auto max-w-6xl px-5">
-        <div className="mb-16">
-          <SectionHeading
-            kicker="Portfólio"
-            title="Todos os Projetos"
-            description="Uma seleção de produtos digitais, experiências e sistemas desenvolvidos."
-          />
+    <main className="min-h-screen bg-background">
+      <PageAnimator />
+
+      {/* ── HERO ORIGINAL ── */}
+      <section className="relative overflow-hidden pt-32 pb-20 px-6">
+        <div className="pointer-events-none absolute right-0 top-0 h-[60vh] w-[45%] overflow-hidden opacity-15 hidden lg:block">
+          <Image src="/projects/homma-projetos.webp" alt="" fill className="object-cover object-left" sizes="45vw" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 to-background" />
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project, i) => (
-            <article
-              key={project.title}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all hover:border-foreground/20"
-            >
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-muted">
-                <Image
-                  src={project.image || "/placeholder.svg"}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-
-              <div className="flex flex-1 flex-col p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="rounded-full border border-border px-2 py-1 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    {project.tag}
-                  </span>
-                  {project.year && (
-                    <span className="font-mono text-[10px] text-muted-foreground">{project.year}</span>
-                  )}
-                </div>
-
-                <h3 className="mb-2 font-display text-xl font-semibold tracking-tight">
-                  {project.title}
-                </h3>
-                
-                <p className="mb-6 text-sm text-muted-foreground leading-relaxed flex-1">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.stack.slice(0, 3).map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-secondary px-2 py-1 font-mono text-[10px] text-secondary-foreground"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.stack.length > 3 && (
-                    <span className="rounded-md bg-secondary px-2 py-1 font-mono text-[10px] text-secondary-foreground">
-                      +{project.stack.length - 3}
-                    </span>
-                  )}
-                </div>
-
-                {project.href ? (
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:text-primary"
-                  >
-                    Ver projeto online
-                    <ArrowUpRight className="size-4" />
-                  </a>
-                ) : (
-                  <span className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground opacity-50 cursor-not-allowed">
-                    Projeto Privado
-                  </span>
-                )}
-              </div>
-            </article>
-          ))}
+        <div className="relative mx-auto max-w-7xl">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground mb-4"
+          >
+            / Trabalhos
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl lg:text-6xl"
+          >
+            Projetos Selecionados.
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="mt-5 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed"
+          >
+            Produtos e sistemas que arquitetei e entreguei —
+            com foco em escalabilidade, performance e resultado real.
+          </motion.p>
         </div>
+      </section>
+
+      {/* ── CLIENTS CAROUSEL ── */}
+      <div className="mb-20">
+        <ClientsCarousel
+          title="Clientes e projetos reais."
+          titleClassName="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground/50"
+        />
       </div>
+
+      {/* ── PROJECTS STACK ANIMATED ── */}
+      <div className="mt-[-80px] sm:mt-[-120px]">
+        <ProjectsStack projects={PROJECTS} hideHeader={true} />
+      </div>
+
     </main>
   )
 }
