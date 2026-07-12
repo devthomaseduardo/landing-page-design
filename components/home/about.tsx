@@ -9,17 +9,17 @@ const PILLARS = [
   {
     number: "01",
     title: "Produto",
-    text: "Toda decisão técnica é tomada pensando no impacto real no usuário e nos objetivos do negócio.",
+    text: "Decisões técnicas guiadas pelo impacto no usuário e no negócio.",
   },
   {
     number: "02",
     title: "Engenharia",
-    text: "Arquiteturas limpas, código sustentável e sistemas que escalam sem virar problema futuro.",
+    text: "Código limpo, arquiteturas escaláveis e sistemas que crescem bem.",
   },
   {
     number: "03",
     title: "Confiança",
-    text: "Sistemas previsíveis, observáveis e com deploys seguros. Menos surpresa, mais resultado.",
+    text: "Sistemas previsíveis, observáveis e com deploys seguros.",
   },
 ]
 
@@ -36,7 +36,6 @@ export function About() {
         </div>
 
         <div className="grid items-start gap-10 lg:grid-cols-[1fr_1.35fr] lg:gap-16">
-          {/* Left side - Headline + CTA */}
           <div className="lg:sticky lg:top-24">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -63,9 +62,7 @@ export function About() {
             </motion.div>
           </div>
 
-          {/* Right side - Content */}
           <div className="space-y-10">
-            {/* Bio */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -73,15 +70,14 @@ export function About() {
               className="max-w-[42ch] text-[15px] leading-relaxed text-muted-foreground sm:text-base"
             >
               <p>
-                Engenheiro de software que atua na intersecção entre backend robusto e interfaces que realmente funcionam. 
-                Construo sistemas que escalam com elegância e falham de forma previsível.
+                Engenheiro de software na intersecção entre backend robusto e interfaces que funcionam de verdade. Sistemas que escalam com elegância e falham de forma previsível.
               </p>
               <p className="mt-4">
-                Abordagem pragmática: menos complexidade desnecessária, lógica de domínio clara e frontend como extensão natural de uma boa arquitetura.
+                Abordagem pragmática: menos complexidade, lógica de domínio clara e frontend como extensão de uma boa arquitetura.
               </p>
             </motion.div>
 
-            {/* Pillars - Mobile Carousel */}
+            {/* Mobile - Carousel com menos texto */}
             <div className="sm:hidden">
               <MobileCarousel itemClassName="w-[min(85vw,19rem)]">
                 {PILLARS.map((p) => (
@@ -103,7 +99,7 @@ export function About() {
               </MobileCarousel>
             </div>
 
-            {/* Pillars - Desktop */}
+            {/* Desktop */}
             <div className="hidden sm:block space-y-px">
               {PILLARS.map((p, index) => (
                 <motion.div
