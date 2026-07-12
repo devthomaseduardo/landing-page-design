@@ -1,59 +1,90 @@
-# Thomas Eduardo — Portfolio
+# Thomas Eduardo — Portfólio Profissional
 
-Site pessoal e portfólio de **Thomas Eduardo**, Product Engineer / Full Stack em São Paulo.
+**Product Engineer Full Stack** | Next.js • TypeScript • Node.js • AWS  
+São Paulo, Brasil
 
-**Produção:** [thomaseduardo.online](https://thomaseduardo.online)
-
----
-
-## Stack
-
-| Camada | Tecnologia |
-|--------|------------|
-| Framework | Next.js 16 (App Router) |
-| UI | React 19, Tailwind CSS 4, shadcn/ui |
-| Animação | Framer Motion, GSAP, Lenis |
-| Ícones | Lucide, Iconify |
-| Carrosséis | Swiper + carrossel mobile custom (scroll-snap) |
-| Analytics | Vercel Analytics + Speed Insights |
-| Deploy | Vercel |
+<p align="center">
+  <a href="https://thomaseduardo.online"><img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio-thomaseduardo.online-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://thomaseduardo.online"><img src="https://img.shields.io/badge/Demo-Live-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://github.com/devthomaseduardo/thomas-eduardo-site"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+</p>
 
 ---
 
-## Funcionalidades
+## Sobre o Projeto
 
-- **Home** — hero com vídeo + TextPressure, projetos, processo, stack, galeria
-- **Sobre** — layout bento, métricas, timeline, certificações
-- **Projetos** — cases com stack e resultados
-- **Valores** — processo comercial e FAQ
-- **Linkbio** (`/linkbio`) — hub de links para redes
-- **Currículo** (`/curriculo`) — visualização e download do PDF (`/curriculo.pdf`)
-- **Redirects** (`/r/[slug]`) — links curtos com tracking (ex.: `/r/wa`, `/r/github`)
-- **Proposta** (`/proposta`) — páginas privadas de proposta (noindex)
-- **UI** — cursor custom (desktop), loader de entrada, WhatsApp flutuante com CircularText
-- **Mobile** — seções em carrossel horizontal para reduzir rolagem
+Este repositório contém o **portfólio profissional completo** de Thomas Eduardo, construído com foco em:
+
+- **Apresentação para recrutadores** (sinais claros de senioridade, processo e resultados)
+- **Experiência premium para clientes** (design editorial, conversão e profissionalismo)
+- **Demonstração prática** do processo de engenharia de 6 etapas que uso em todos os projetos
+
+**Site em produção:** [thomaseduardo.online](https://thomaseduardo.online)
 
 ---
 
-## Rotas principais
+## Processo de Engenharia (6 Etapas)
 
-| Rota | Descrição |
-|------|-----------|
-| `/` | Home |
-| `/sobre` | Sobre + métricas |
-| `/projetos` | Projetos |
-| `/valores` | Processo e valores |
-| `/linkbio` | Links sociais |
-| `/curriculo` | CV em PDF |
-| `/r` | Índice de redirects |
-| `/r/wa` | WhatsApp (tracked) |
-| `/proposta` | Proposta comercial (privada) |
+Todo projeto que entrego segue este processo estruturado:
+
+| Etapa | Descrição | Entregável |
+|-------|-----------|------------|
+| 1. Discovery | Entendimento profundo do problema, objetivos de negócio e restrições | Documento de escopo + métricas de sucesso |
+| 2. Arquitetura | Definição de stack, estrutura de pastas, padrões e estimativas | Arquitetura + backlog priorizado |
+| 3. Desenvolvimento | Código limpo, componentização, testes e documentação | Código em produção-ready |
+| 4. Validação & QA | Testes manuais, automação quando aplicável e feedback | Relatório de testes + ajustes |
+| 5. Deploy & Monitoramento | CI/CD, observabilidade e rollback strategy | Deploy estável + métricas |
+| 6. Iteração & Entrega | Coleta de feedback, melhorias contínuas e handoff | Projeto entregue + documentação final |
+
+Este processo aparece de forma clara na seção **Valores** do site.
 
 ---
 
-## Desenvolvimento local
+## Stack Técnica
 
-**Requisitos:** Node.js 18+ e [pnpm](https://pnpm.io/)
+| Camada              | Tecnologias                                                                 |
+|---------------------|-------------------------------------------------------------------------------|
+| **Framework**       | Next.js 16 (App Router)                                                       |
+| **Frontend**        | React 19, TypeScript, Tailwind CSS 4, shadcn/ui, Framer Motion, GSAP, Lenis  |
+| **UI/UX**           | Componentes reutilizáveis, micro-interações, carrosséis custom (scroll-snap) |
+| **Backend & Dados** | Node.js, Fastify/Express, Prisma, PostgreSQL, MongoDB, Supabase              |
+| **Infra & Deploy**  | Vercel, AWS, Docker, GitHub Actions, CI/CD                                   |
+| **Integrações**     | Mercado Pago, WhatsApp API, JWT + RBAC, Analytics                            |
+
+---
+
+## Funcionalidades Principais
+
+- **Hero com vídeo + animações avançadas** (TextPressure, Framer Motion)
+- **Seção de Projetos** com cases reais e métricas de impacto
+- **Processo de 6 etapas** bem documentado e visual
+- **Sobre + Métricas** (timeline, certificações, resultados)
+- **Linkbio** e **Currículo** otimizados para recrutadores
+- **Redirects com tracking** (`/r/wa`, `/r/github`)
+- **Páginas de Proposta** privadas (noindex)
+- **Design system** consistente + experiência mobile-first com carrosséis
+- **SEO otimizado** + JSON-LD Person
+
+---
+
+## Rotas Principais
+
+| Rota          | Finalidade                              | Indexável? |
+|---------------|-----------------------------------------|------------|
+| `/`           | Home + Hero + Projetos + Processo       | Sim        |
+| `/sobre`      | Sobre, métricas, timeline e valores     | Sim        |
+| `/projetos`   | Cases detalhados                        | Sim        |
+| `/valores`    | Processo comercial + FAQ                | Sim        |
+| `/linkbio`    | Hub de links sociais                    | Sim        |
+| `/curriculo`  | Visualizador + download do CV           | Não        |
+| `/r/*`        | Redirects com analytics                 | Não        |
+| `/proposta`   | Páginas privadas de proposta            | Não        |
+
+---
+
+## Desenvolvimento Local
+
+**Requisitos:** Node.js 18+ e pnpm
 
 ```bash
 git clone https://github.com/devthomaseduardo/thomas-eduardo-site.git
@@ -62,62 +93,63 @@ pnpm install
 pnpm dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000).
+Abra [http://localhost:3000](http://localhost:3000)
 
-### Scripts
+### Scripts úteis
 
 ```bash
-pnpm dev      # servidor de desenvolvimento
-pnpm build    # build de produção
-pnpm start    # serve o build
+pnpm dev      # Desenvolvimento
+pnpm build    # Build de produção
+pnpm start    # Servir build
 pnpm lint     # ESLint
 ```
 
 ---
 
-## Estrutura
+## Estrutura do Projeto
 
 ```
-app/                 # App Router (páginas e layouts)
-  r/[slug]/          # redirects com analytics
-  curriculo/         # viewer do PDF
-  linkbio/           # hub de links
-  sobre|projetos|valores/
+app/                    # App Router (Next.js 16)
+  r/[slug]/             # Redirects com tracking
+  curriculo/            # Viewer de PDF
+  linkbio/              # Hub de links
+  sobre | projetos | valores /
 components/
-  home/              # seções da home
-  ui/                # primitives (cursor, loader, carousels, etc.)
+  home/                 # Seções da home
+  ui/                   # Primitives e componentes reutilizáveis
 lib/
-  data.ts            # projetos, contato
-  redirects.ts       # mapa de /r/*
+  data.ts               # Projetos, clientes, stack
+  redirects.ts          # Mapa de /r/*
 public/
-  curriculo.pdf      # CV oficial
-  hero.mp4           # vídeo do hero
-  projects/          # imagens dos cases
+  curriculo.pdf         # CV oficial
+  hero.mp4              # Vídeo do hero
+  projects/             # Imagens dos cases
 ```
 
 ---
 
 ## Deploy
 
-O repositório está preparado para deploy na **Vercel** (push em `main` dispara o pipeline, se o projeto estiver linkado).
+Deploy automático via **Vercel** (push na branch `main`).
 
 ```bash
-# build local de verificação
-pnpm build
+pnpm build   # Verificação local
 ```
-
-Variáveis de ambiente: nenhuma obrigatória para o site estático/SSR padrão. Analytics e Speed Insights funcionam no ambiente Vercel.
 
 ---
 
-## SEO e privacidade
+## SEO & Privacidade
 
-- Páginas públicas indexáveis: home, sobre, projetos, valores
-- **Noindex:** `/proposta`, `/r/*`, `/curriculo` (documento utilitário)
-- JSON-LD Person no layout raiz
+- Páginas públicas indexáveis: Home, Sobre, Projetos, Valores
+- Páginas com `noindex`: `/proposta`, `/r/*`, `/curriculo`
+- JSON-LD Person implementado no layout raiz
 
 ---
 
 ## Licença
 
-Uso pessoal. Todos os direitos reservados © Thomas Eduardo.
+Uso pessoal e profissional. Todos os direitos reservados © Thomas Eduardo.
+
+---
+
+**Construído com processo, intenção e atenção aos detalhes.**
