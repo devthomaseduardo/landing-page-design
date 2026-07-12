@@ -7,6 +7,7 @@ import { TechExpertise } from "@/components/home/tech-expertise"
 import { ClientsCarousel } from "@/components/home/clients-carousel"
 import { OliverParallax } from "@/components/home/oliver-parallax"
 import { PageAnimator } from "@/components/page-animator"
+import { Gallery } from "@/components/home/gallery"
 
 export const metadata: Metadata = {
   title: "Thomas Eduardo — Software Engineer",
@@ -22,6 +23,7 @@ export default function HomePage() {
       <Hero />
       <ClientsCarousel />
       <ProjectsStack />
+      <Gallery />
       <EngineeringApproach />
       <OliverParallax />
       <TechExpertise />
