@@ -20,12 +20,8 @@ type MobileCarouselProps = {
 }
 
 /**
- * Mobile carousel with excellent gesture/swipe navigation.
- * Features:
- * - Native smooth swipe with snap
- * - Accurate active slide detection during gestures
- * - Delicate, modern dot indicators
- * - Optimized touch handling
+ * Mobile carousel with smooth gesture navigation.
+ * Very subtle dots by default.
  */
 export function MobileCarousel({
   children,
@@ -38,7 +34,6 @@ export function MobileCarousel({
   const items = Children.toArray(children).filter(Boolean)
   const [active, setActive] = useState(0)
 
-  // Detects the most centered slide (very accurate during swipe)
   const syncActive = useCallback(() => {
     const el = scrollerRef.current
     if (!el) return
@@ -90,11 +85,9 @@ export function MobileCarousel({
       <div
         ref={scrollerRef}
         className={cn(
-          // Excellent gesture navigation on mobile
           "-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2",
-          "touch-action-pan-x",                    // Better swipe response
+          "touch-action-pan-x",
           "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden",
-          // Desktop fallback
           "sm:mx-0 sm:grid sm:snap-none sm:overflow-visible sm:px-0 sm:pb-0",
           desktopClassName
         )}
@@ -113,7 +106,7 @@ export function MobileCarousel({
         ))}
       </div>
 
-      {/* Modern & delicate dots */}
+      {/* Extremely subtle dots */}
       {dots && items.length > 1 && (
         <div className="mt-4 flex items-center justify-center gap-1.5 sm:hidden">
           {items.map((_, i) => (
@@ -123,10 +116,10 @@ export function MobileCarousel({
               aria-label={`Ir para slide ${i + 1}`}
               onClick={() => goTo(i)}
               className={cn(
-                "h-1 rounded-full transition-all duration-200 ease-out",
+                "h-[2px] rounded-full transition-all duration-200 ease-out",
                 i === active
-                  ? "w-5 bg-white/80"           // Active: elegant short bar
-                  : "w-1 bg-white/15 hover:bg-white/30" // Inactive: very subtle
+                  ? "w-6 bg-white/70"           // Active: thin elegant line
+                  : "w-[3px] bg-white/10 hover:bg-white/20" // Inactive: almost invisible
               )}
             />
           ))}
