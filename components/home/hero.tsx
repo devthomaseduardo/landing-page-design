@@ -25,8 +25,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src="/hero-thomas.mp4"
-          poster="/hero-poster.jpg"
+          src="/hero.mp4"
           autoPlay={!reduceMotion}
           muted
           loop
