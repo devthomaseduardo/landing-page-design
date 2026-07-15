@@ -139,6 +139,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Node.js", "Prisma"],
     image: "/projects/paper-contratos.svg",
+    href: "https://paper-contracts.vercel.app/",
     year: "2025",
   },
 
