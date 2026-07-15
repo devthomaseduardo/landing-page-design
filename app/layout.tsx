@@ -37,7 +37,7 @@ const signature = localFont({
   display: "swap",
 })
 
-const SITE_URL = "https://thomaseduardo.online"
+const SITE_URL = "https://thomaseduardo.com.br"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

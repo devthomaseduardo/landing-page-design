@@ -4,7 +4,7 @@ export const CONTACT = {
   email: "devthomaseduardo@gmail.com",
   phone: "(11) 97707-0209",
   location: "São Paulo, SP",
-  site: "thomaseduardo.online",
+  site: "thomaseduardo.com.br",
   github: "https://github.com/devthomaseduardo",
   linkedin: "https://linkedin.com/in/devthomaseduardo",
   whatsapp:
@@ -58,7 +58,7 @@ export const PROJECTS: Project[] = [
       "Vercel",
     ],
     image: "/projects/homma-projetos.webp",
-    href: "https://hommadesignvercelapp.vercel.app",
+    href: "https://hommadesign.com.br",
     year: "2026",
   },
 
@@ -160,6 +160,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "Tailwind CSS"],
     image: "/projects/sleep-house-campinas.svg",
+    href: "https://sleephouseloja.com.br",
     year: "2026",
   },
 
@@ -181,6 +182,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["React", "Tailwind CSS", "Framer Motion"],
     image: "/projects/academia-spinmove.svg",
+    href: "https://spinmovecom.vercel.app/",
     year: "2025",
   },
 
@@ -202,6 +204,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "Node.js", "PostgreSQL"],
     image: "/projects/yagizi-swissparck.svg",
+    href: "https://www.yaziswissparkcampinas.com.br/",
     year: "2025",
   },
 
@@ -244,6 +247,7 @@ export const PROJECTS: Project[] = [
     ],
     stack: ["Next.js", "TypeScript", "PostgreSQL"],
     image: "/projects/hazap-workstation.svg",
+    href: "https://hazap.com.br/workstation/",
     year: "2026",
   },
 
@@ -431,14 +435,14 @@ export const STACK = [
 ]
 
 export const CLIENTS = [
-  { name: "Brasservice", logo: "/clientes/brasservice.webp" },
-  { name: "Casalellit", logo: "/clientes/casalellit.webp" },
+  { name: "Brasservice", logo: "/clientes/brasservice.webp", href: "https://ass.bras-service.com/" },
+  { name: "Casalellit", logo: "/clientes/casalellit.webp", href: "https://www.lellit.com.br/" },
   { name: "Contabilidade Almeida", logo: "/clientes/contabilidade-almeida.webp" },
   { name: "Fitflow", logo: "/clientes/fitflow.webp" },
-  { name: "Hazzap Workstation", logo: "/clientes/hazzap.webp" },
+  { name: "Hazzap Workstation", logo: "/clientes/hazzap.webp", href: "https://hazap.com.br/workstation/" },
   { name: "Instituto Kell", logo: "/clientes/kell.webp" },
   { name: "Reis do Manto", logo: "/clientes/reis-do-manto.webp" },
-  { name: "Sleep House", logo: "/clientes/sleephouse.png" },
-  { name: "Spinmove", logo: "/clientes/spinmove.webp" },
-  { name: "Yazigi Swiss Park", logo: "/clientes/yazigi.webp" },
+  { name: "Sleep House", logo: "/clientes/sleephouse.png", href: "https://sleephouseloja.com.br" },
+  { name: "Spinmove", logo: "/clientes/spinmove.webp", href: "https://spinmovecom.vercel.app/" },
+  { name: "Yazigi Swiss Park", logo: "/clientes/yazigi.webp", href: "https://www.yaziswissparkcampinas.com.br/" },
 ]

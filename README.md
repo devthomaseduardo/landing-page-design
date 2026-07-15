@@ -4,8 +4,8 @@
 São Paulo, Brasil
 
 <p align="center">
-  <a href="https://thomaseduardo.online"><img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio-thomaseduardo.online-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
-  <a href="https://thomaseduardo.online"><img src="https://img.shields.io/badge/Demo-Live-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://thomaseduardo.com.br"><img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio-thomaseduardo.com.br-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="https://thomaseduardo.com.br"><img src="https://img.shields.io/badge/Demo-Live-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
   <a href="https://github.com/devthomaseduardo/thomas-eduardo-site"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
 </p>
 
@@ -19,7 +19,7 @@ Este repositório contém o **portfólio profissional completo** de Thomas Eduar
 - **Experiência premium para clientes** (design editorial, conversão e profissionalismo)
 - **Demonstração prática** do processo de engenharia de 6 etapas que uso em todos os projetos
 
-**Site em produção:** [thomaseduardo.online](https://thomaseduardo.online)
+**Site em produção:** [thomaseduardo.com.br](https://thomaseduardo.com.br)
 
 ---
 

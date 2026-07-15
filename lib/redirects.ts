@@ -53,28 +53,28 @@ export const REDIRECTS: Record<string, RedirectEntry> = {
     slug: "portfolio",
     label: "Portfólio",
     description: "Site principal",
-    url: "https://thomaseduardo.online",
+    url: "https://thomaseduardo.com.br",
     event: "redirect_portfolio",
   },
   site: {
     slug: "site",
     label: "Portfólio",
     description: "Site principal",
-    url: "https://thomaseduardo.online",
+    url: "https://thomaseduardo.com.br",
     event: "redirect_portfolio",
   },
   linkbio: {
     slug: "linkbio",
     label: "Links",
     description: "Todos os links",
-    url: "https://thomaseduardo.online/linkbio",
+    url: "https://thomaseduardo.com.br/linkbio",
     event: "redirect_linkbio",
   },
   curriculo: {
     slug: "curriculo",
     label: "Currículo",
     description: "CV completo",
-    url: "https://thomaseduardo.online/curriculo",
+    url: "https://thomaseduardo.com.br/curriculo",
     event: "redirect_curriculo",
   },
   // Project deep links
@@ -84,7 +84,7 @@ export const REDIRECTS: Record<string, RedirectEntry> = {
     description: PROJECTS.find((p) => p.title.includes("Homma"))?.subtitle,
     url:
       PROJECTS.find((p) => p.title.includes("Homma"))?.href ??
-      "https://thomaseduardo.online/projetos",
+      "https://thomaseduardo.com.br/projetos",
     event: "redirect_project_homma",
   },
   teron: {
@@ -93,7 +93,7 @@ export const REDIRECTS: Record<string, RedirectEntry> = {
     description: PROJECTS.find((p) => p.title.includes("TERON"))?.subtitle,
     url:
       PROJECTS.find((p) => p.title.includes("TERON"))?.href ??
-      "https://thomaseduardo.online/projetos",
+      "https://thomaseduardo.com.br/projetos",
     event: "redirect_project_teron",
   },
 }
