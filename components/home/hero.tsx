@@ -85,6 +85,45 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+      {!reduceMotion && <AnimatedCursor />}
     </section>
   )
 }
+
+function AnimatedCursor() {
+  return (
+    <motion.div
+      initial={{ x: "85vw", y: "80vh", opacity: 0 }}
+      animate={{
+        x: ["85vw", "60vw", "15vw", "85vw"],
+        y: ["80vh", "5vh", "75vh", "80vh"],
+        opacity: [0, 1, 1, 1, 0],
+      }}
+      transition={{
+        duration: 15.45,
+        ease: "easeInOut",
+        times: [0, 0.25, 0.65, 0.9, 1],
+        repeat: Infinity,
+        repeatDelay: 0,
+      }}
+      className="pointer-events-none absolute left-0 top-0 z-50 flex h-8 w-8 items-center justify-center drop-shadow-2xl"
+    >
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.42c.45 0 .67-.54.35-.85L6.35 3.35c-.24-.24-.85-.07-.85.35Z"
+          fill="#ffffff"
+          stroke="#000000"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </motion.div>
+  )
+}
+
