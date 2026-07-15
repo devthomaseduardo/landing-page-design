@@ -125,6 +125,7 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`dark ${inter.variable} ${mono.variable} ${display.variable} ${signature.variable} bg-background`}
+      suppressHydrationWarning
     >
       <head>
         <script
