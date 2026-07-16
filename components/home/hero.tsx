@@ -111,15 +111,16 @@ export function Hero() {
       data-hero-container
     >
       <div className="absolute inset-0">
+        {/* Vídeo com scrub por mouse - versão recodificada */}
         <video
           ref={videoRef}
-          src="/hero-scrub.mp4"   {/* Use the re-encoded version */}
+          src="/hero-scrub.mp4"
           muted
           playsInline
           preload="auto"
           className="absolute inset-0 h-full w-full object-cover object-[center_30%] opacity-90 sm:opacity-85"
           aria-hidden
-          poster="/hero-poster.jpg"  {/* Optional: extract neutral frame as poster */}
+          poster="/hero-poster.jpg"
         />
         <div className="absolute inset-0 bg-black/20 sm:bg-black/15" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
