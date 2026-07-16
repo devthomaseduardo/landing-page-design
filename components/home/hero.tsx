@@ -215,7 +215,7 @@ function AnimatedCursor() {
           width: 32,
           height: 32,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 40%, transparent: 70%)",
+            "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 40%, transparent 70%)",
         }}
       />
 
