@@ -1,38 +1,125 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState, useCallback } from "react"
 import { motion, useReducedMotion } from "framer-motion"
 import TextPressure from "@/components/ui/text-pressure"
 
+interface UseVideoScrubberOptions {
+  videoRef: React.RefObject<HTMLVideoElement>
+  enabled?: boolean
+}
+
+function useVideoScrubber({ videoRef, enabled = true }: UseVideoScrubberOptions) {
+  const [isScrubbing, setIsScrubbing] = useState(false)
+
+  const handlePointerMove = useCallback((e: PointerEvent) => {
+    const video = videoRef.current
+    if (!video || !enabled || video.seeking) return
+
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect()
+    const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
+
+    const targetTime = x * video.duration
+
+    // Throttle seeks
+    if (Math.abs(targetTime - video.currentTime) < 0.08) return
+
+    video.currentTime = targetTime
+  }, [videoRef, enabled])
+
+  const handlePointerDown = useCallback(() => setIsScrubbing(true), [])
+  const handlePointerUp = useCallback(() => setIsScrubbing(false), [])
+
+  useEffect(() => {
+    const container = document.querySelector('[data-hero-container]') as HTMLElement | null
+    if (!container || !enabled) return
+
+    container.addEventListener('pointermove', handlePointerMove)
+    container.addEventListener('pointerdown', handlePointerDown)
+    container.addEventListener('pointerup', handlePointerUp)
+    container.addEventListener('pointerleave', handlePointerUp)
+
+    return () => {
+      container.removeEventListener('pointermove', handlePointerMove)
+      container.removeEventListener('pointerdown', handlePointerDown)
+      container.removeEventListener('pointerup', handlePointerUp)
+      container.removeEventListener('pointerleave', handlePointerUp)
+    }
+  }, [handlePointerMove, handlePointerDown, handlePointerUp, enabled])
+
+  return { isScrubbing }
+}
+
 /**
- * Video + name only. No slogan, no buttons.
- * Left / bottom — personal brand over atmosphere.
- * Name uses React Bits TextPressure (hero only).
+ * Technical Mouse-Follow Hero
+ * - Re-encoded video with all keyframes recommended
+ * - Mouse X directly controls video.currentTime
+ * - Preserves original design (TextPressure, overlays, animated cursor)
+ * - Fallback for reduced motion
  */
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const reduceMotion = useReducedMotion()
+  const { isScrubbing } = useVideoScrubber({ 
+    videoRef, 
+    enabled: !reduceMotion 
+  })
 
   useEffect(() => {
     const v = videoRef.current
     if (!v || reduceMotion) return
-    v.playbackRate = 0.65
-    void v.play().catch(() => { })
-  }, [reduceMotion])
+
+    v.playbackRate = 0.6
+    v.muted = true
+    v.loop = false
+    v.autoplay = false
+
+    // Start at neutral/mid frame (adjust if needed)
+    const startAtNeutral = () => {
+      if (v.duration) {
+        v.currentTime = v.duration * 0.5
+      }
+    }
+
+    if (v.readyState >= 1) {
+      startAtNeutral()
+    } else {
+      v.addEventListener('loadedmetadata', startAtNeutral, { once: true })
+    }
+
+    // Optional: subtle idle animation when not scrubbing
+    let idleInterval: NodeJS.Timeout
+    const startIdle = () => {
+      idleInterval = setInterval(() => {
+        if (v && !isScrubbing && !v.seeking) {
+          const target = v.duration * (0.45 + Math.random() * 0.1)
+          v.currentTime = target
+        }
+      }, 4200)
+    }
+
+    // Uncomment if you want subtle idle movement when mouse is away
+    // startIdle()
+
+    return () => clearInterval(idleInterval)
+  }, [reduceMotion, isScrubbing])
 
   return (
-    <section className="relative flex h-[100svh] min-h-[32rem] w-full items-end overflow-hidden bg-black" data-hide-cursor>
+    <section 
+      className="relative flex h-[100svh] min-h-[32rem] w-full items-end overflow-hidden bg-black" 
+      data-hide-cursor
+      data-hero-container
+    >
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          src="/hero.mp4"
-          autoPlay={!reduceMotion}
+          src="/hero-scrub.mp4"   {/* Use the re-encoded version */}
           muted
-          loop
           playsInline
-          preload="metadata"
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover object-[center_30%] opacity-90 sm:opacity-85"
           aria-hidden
+          poster="/hero-poster.jpg"  {/* Optional: extract neutral frame as poster */}
         />
         <div className="absolute inset-0 bg-black/20 sm:bg-black/15" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
@@ -84,6 +171,7 @@ export function Hero() {
           </div>
         </motion.div>
       </div>
+
       {!reduceMotion && <AnimatedCursor />}
     </section>
   )
@@ -126,7 +214,7 @@ function AnimatedCursor() {
           width: 32,
           height: 32,
           background:
-            "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 40%, transparent 70%)",
+            "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.12) 40%, transparent: 70%)",
         }}
       />
 
@@ -139,6 +227,5 @@ function AnimatedCursor() {
         }}
       />
     </motion.div>
-  )
+    )
 }
-
