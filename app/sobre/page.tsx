@@ -155,11 +155,9 @@ export default function SobrePage() {
                 key={m.label}
                 {...fade}
                 transition={{ delay: i * 0.04 }}
-                className={`px-4 py-8 sm:px-6 sm:py-10 ${
-                  i % 2 === 0 ? "border-r border-border/25" : ""
-                } ${i < 2 ? "border-b border-border/25 lg:border-b-0" : ""} ${
-                  i < 3 ? "lg:border-r lg:border-border/25" : "lg:border-r-0"
-                }`}
+                className={`px-4 py-8 sm:px-6 sm:py-10 ${i % 2 === 0 ? "border-r border-border/25" : ""
+                  } ${i < 2 ? "border-b border-border/25 lg:border-b-0" : ""} ${i < 3 ? "lg:border-r lg:border-border/25" : "lg:border-r-0"
+                  }`}
               >
                 <p className="text-3xl font-medium tracking-tight text-white sm:text-4xl md:text-5xl">
                   {m.value}
