@@ -7,6 +7,7 @@ São Paulo, Brasil
   <a href="https://thomaseduardo.com.br"><img src="https://img.shields.io/badge/🌐_Portf%C3%B3lio-thomaseduardo.com.br-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
   <a href="https://thomaseduardo.com.br"><img src="https://img.shields.io/badge/Demo-Live-E8620A?style=for-the-badge&logo=vercel&logoColor=white" /></a>
   <a href="https://github.com/devthomaseduardo/thomas-eduardo-site"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
+  <img src="https://komarev.com/ghpvc/?username=devthomaseduardo&repo=thomas-eduardo-site&color=orange" alt="Repository Views" />
 </p>
 
 ---
@@ -153,3 +154,10 @@ Uso pessoal e profissional. Todos os direitos reservados © Thomas Eduardo.
 ---
 
 **Construído com processo, intenção e atenção aos detalhes.**
+
+---
+
+> **📊 Contagem de visualizações deste repositório**  
+> O badge acima mostra o número de visualizações únicas deste README (atualizado automaticamente via [komarev.com](https://komarev.com/ghpvc)).
+
+**Obrigado por visitar!** Se este projeto te inspirou, considere dar uma estrela ⭐️ no repositório.
