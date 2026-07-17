@@ -11,7 +11,7 @@ const LINKS = [
   { href: "/", label: "Início" },
   { href: "/sobre", label: "Sobre" },
   { href: "/projetos", label: "Projetos" },
-  { href: "/valores", label: "Valores" },
+  { href: "/processo", label: "Processos" },
 ]
 
 const WHATSAPP =

@@ -112,7 +112,7 @@ export default function SobrePage() {
                 <CtaLink href="/r/wa" variant="solid" size="sm">
                   Falar comigo
                 </CtaLink>
-                <CtaLink href="/valores" variant="soft" size="sm">
+                <CtaLink href="/processo" variant="soft" size="sm">
                   Como trabalho
                 </CtaLink>
               </div>

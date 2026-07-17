@@ -6,11 +6,6 @@ import { ProjectsStack } from "@/components/home/projects-stack"
 import { ClientsCarousel } from "@/components/home/clients-carousel"
 import { PageAnimator } from "@/components/page-animator"
 
-// Lazy load heavy components for better performance
-const Gallery = dynamic(() => import("@/components/home/gallery").then(mod => ({ default: mod.Gallery })), {
-  loading: () => <div className="h-[400px] bg-background" />,
-})
-
 const EngineeringApproach = dynamic(() => import("@/components/home/engineering-approach").then(mod => ({ default: mod.EngineeringApproach })), {
   loading: () => <div className="h-[500px] bg-background" />,
 })
@@ -37,9 +32,9 @@ export default function HomePage() {
       <Hero />
       <ClientsCarousel />
       <ProjectsStack />
-      <Gallery />
       <EngineeringApproach />
       <OliverParallax />
+
       <TechExpertise />
       <About />
     </>

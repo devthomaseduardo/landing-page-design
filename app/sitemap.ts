@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "", 
     "/sobre", 
     "/curriculo", 
-    "/valores", 
+    "/processo", 
     "/projetos", 
     "/proposta"
   ]
