@@ -34,9 +34,7 @@ export function ProjectsStack({
               transition={{ duration: 0.5 }}
               className="text-h2 font-normal text-foreground tracking-[-0.02em]"
             >
-              Projetos
-              <br className="sm:hidden" />
-              <span className="sm:ml-2">selecionados.</span>
+              Projetos selecionados.
             </motion.h2>
           </div>
 
@@ -58,7 +56,6 @@ export function ProjectsStack({
       )}
 
       <div className="site-shell">
-        {/* Mobile: carousel · Desktop: stacked cards */}
         <div className="sm:hidden">
           <MobileCarousel
             itemClassName="w-[min(88vw,22rem)]"
@@ -83,10 +80,10 @@ export function ProjectsStack({
           <Link
             href="/projetos"
             className="group inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.12em] text-white/55 transition-colors hover:text-white"
-            >
+          >
             Ver todos os projetos
             <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
+          </Link>
         </div>
       )}
     </section>
