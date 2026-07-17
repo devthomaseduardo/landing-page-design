@@ -12,7 +12,7 @@ import {
 import TextPressure from "@/components/ui/text-pressure"
 
 /**
- * Hero — video scrub + 3D tilt + floating light + entrance motion
+ * Hero - video scrub + 3D tilt + floating light + entrance motion
  */
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -179,7 +179,7 @@ export function Hero() {
           Product Engineer · SP
         </motion.p>
 
-        <h1 className="sr-only">Thomas Eduardo — Full Stack Software Engineer</h1>
+        <h1 className="sr-only">Thomas Eduardo - Full Stack Software Engineer</h1>
 
         <motion.div
           className="max-w-[min(100%,42rem)]"
@@ -198,7 +198,7 @@ export function Hero() {
           transition={{ delay: 0.65, duration: 0.6 }}
           className="mt-5 max-w-sm text-sm leading-relaxed text-white/55"
         >
-          Aplicações web, sistemas internos e produtos digitais — da arquitetura ao deploy.
+          Aplicações web, sistemas internos e produtos digitais - da arquitetura ao deploy.
         </motion.p>
       </div>
 

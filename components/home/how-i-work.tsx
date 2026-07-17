@@ -6,7 +6,7 @@ const STEPS = [
   {
     n: "01",
     title: "Entender",
-    text: "Problema, usuário e restrições — antes do código.",
+    text: "Problema, usuário e restrições - antes do código.",
   },
   {
     n: "02",

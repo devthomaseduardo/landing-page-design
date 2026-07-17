@@ -5,7 +5,7 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 /**
- * Page-wide scroll choreography — fade, 3D rise, stagger cards.
+ * Page-wide scroll choreography - fade, 3D rise, stagger cards.
  */
 export function PageAnimator() {
   const initialized = useRef(false)

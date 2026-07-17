@@ -14,7 +14,7 @@ type Tilt3DProps = Tilt3DOptions & {
 }
 
 /**
- * 3D tilt wrapper — GPU transform via CSS vars from useTilt3D.
+ * 3D tilt wrapper - GPU transform via CSS vars from useTilt3D.
  */
 export function Tilt3D({
   children,

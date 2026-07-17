@@ -8,7 +8,7 @@ import { CONTACT } from "@/lib/data"
 
 export const metadata: Metadata = {
   title: "Proposta Comercial",
-  description: "Proposta comercial de desenvolvimento — página privada.",
+  description: "Proposta comercial de desenvolvimento - página privada.",
   robots: { index: false, follow: false, nocache: true },
   alternates: { canonical: "/proposta" },
   openGraph: {
@@ -72,7 +72,7 @@ export default function PropostaPage() {
                 Proposta Comercial
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground font-light text-pretty">
-                Olá, tudo bem? Sou desenvolvedor Full Stack e trabalho na criação de sistemas web, automações e interfaces digitais com foco em performance, clareza e resultado prático — da concepção da solução ao desenvolvimento completo.
+                Olá, tudo bem? Sou desenvolvedor Full Stack e trabalho na criação de sistemas web, automações e interfaces digitais com foco em performance, clareza e resultado prático - da concepção da solução ao desenvolvimento completo.
               </p>
             </Reveal>
 

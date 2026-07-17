@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import { Icon } from "@iconify/react"
-import { MobileCarousel } from "@/components/ui/mobile-carousel"
 
 const EXPERTISE = [
   {
@@ -88,14 +87,11 @@ export function TechExpertise() {
           </motion.p>
         </div>
 
-        <MobileCarousel
-          itemClassName="w-[min(78vw,18rem)]"
-          desktopClassName="sm:grid sm:grid-cols-2 sm:gap-3 lg:grid-cols-4"
-        >
+        <div className="flex flex-col gap-3">
           {EXPERTISE.map((group, i) => (
             <div
               key={group.category}
-              className="group relative h-full overflow-hidden rounded-xl border border-border/20 bg-transparent p-4 transition-colors hover:border-white/15 hover:bg-white/[0.02] sm:rounded-2xl sm:p-5"
+              className="group relative overflow-hidden rounded-xl border border-border/20 bg-transparent p-4 transition-colors hover:border-white/15 hover:bg-white/[0.02] sm:rounded-2xl sm:p-5"
             >
               <div className="mb-3 sm:mb-4">
                 <p className="label-kicker mb-0.5 text-muted-foreground/50 sm:mb-1">
@@ -122,7 +118,7 @@ export function TechExpertise() {
               </div>
             </div>
           ))}
-        </MobileCarousel>
+        </div>
       </div>
     </section>
   )

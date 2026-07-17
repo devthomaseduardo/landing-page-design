@@ -5,7 +5,7 @@ import { CtaLink } from "@/components/ui/cta"
 export const metadata: Metadata = {
   title: "Currículo | Thomas Eduardo",
   description:
-    "Currículo de Thomas Eduardo — Desenvolvedor Full Stack / Product Engineer.",
+    "Currículo de Thomas Eduardo - Desenvolvedor Full Stack / Product Engineer.",
   alternates: { canonical: "/curriculo" },
   robots: { index: false, follow: false },
 }
@@ -23,7 +23,7 @@ export default function CurriculoPage() {
               Currículo.
             </h1>
             <p className="mt-2 max-w-md text-sm font-light leading-relaxed text-white/65">
-              Versão em PDF — Full Stack / Product Engineer. Pronto para
+              Versão em PDF - Full Stack / Product Engineer. Pronto para
               download ou visualização.
             </p>
           </div>

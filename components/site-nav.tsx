@@ -43,7 +43,7 @@ export function SiteNav() {
           "pointer-events-auto mx-auto flex w-full max-w-5xl items-center justify-between gap-3 px-4 pt-3 sm:px-6 sm:pt-4",
         )}
       >
-        {/* Logo — left */}
+        {/* Logo - left */}
         <div
           className={cn(
             "rounded-full transition-all duration-300",
@@ -53,7 +53,7 @@ export function SiteNav() {
           <Logo size={24} className="gap-2" />
         </div>
 
-        {/* Compact centered pill nav — desktop */}
+        {/* Compact centered pill nav - desktop */}
         <nav
           className={cn(
             "absolute left-1/2 top-3 hidden -translate-x-1/2 items-center gap-0.5 rounded-full border border-white/10 px-1.5 py-1 transition-all duration-300 sm:top-4 md:flex",

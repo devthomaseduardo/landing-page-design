@@ -38,7 +38,7 @@
 
 :root {
   color-scheme: dark;
-  /* nik.co inspired: pure black / white / gray — no loud accent */
+  /* nik.co inspired: pure black / white / gray - no loud accent */
   --background: #000000;
   --foreground: #FFFFFF;
   --card: #141414;
@@ -50,7 +50,7 @@
   --secondary: #141414;
   --secondary-foreground: #FFFFFF;
   --muted: #1a1a1a;
-  /* Brighter secondary type — less “dead gray” */
+  /* Brighter secondary type - less “dead gray” */
   --muted-foreground: #c2c2c2;
   --accent: #2e2e2e;
   --accent-foreground: #FFFFFF;
@@ -92,7 +92,7 @@
     background: #FFFFFF;
     color: #000000;
   }
-  /* Custom cursor — hide native on fine pointers when active */
+  /* Custom cursor - hide native on fine pointers when active */
   html.custom-cursor-active,
   html.custom-cursor-active * {
     cursor: none !important;
@@ -112,7 +112,7 @@
   .font-display {
     font-family: var(--font-display);
   }
-  /* nik-style display: Heathergreen energy — tight, uppercase, statement */
+  /* nik-style display: Heathergreen energy - tight, uppercase, statement */
   .text-display {
     font-family: var(--font-display);
     font-weight: 700;
@@ -133,7 +133,7 @@
     line-height: 1.55;
   }
   /* Responsive type scale */
-  /* Page titles — mobile-safe clamps */
+  /* Page titles - mobile-safe clamps */
   .text-h1 {
     font-family: var(--font-display);
     font-weight: 800;
@@ -153,7 +153,7 @@
     text-transform: uppercase;
     font-size: clamp(1.35rem, 4.2vw, 2.5rem);
   }
-  /* Line-mask wrappers for reveal animations — extra room on mobile */
+  /* Line-mask wrappers for reveal animations - extra room on mobile */
   .line-mask {
     display: block;
     overflow: hidden;
@@ -173,7 +173,7 @@
       display: block;
     }
   }
-  /* Compact CTAs — no heavy white borders */
+  /* Compact CTAs - no heavy white borders */
   .btn-cta:hover .btn-arrow {
     transform: translateX(3px);
   }
@@ -244,7 +244,7 @@
     color: rgba(255, 255, 255, 0.55);
   }
   /*
-    Smart page gutters — professional balance:
+    Smart page gutters - professional balance:
     - Mobile: ~24px breathing room
     - Tablet/desktop: scales with viewport (never glued to edges)
     - Large screens: caps content width so side margins grow naturally
@@ -587,6 +587,16 @@
   animation: float-y 5s ease-in-out infinite;
 }
 
+/* Large scroll cue arrow (projects stack end) */
+@keyframes arrow-bounce-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+
+.animate-arrow-bounce {
+  animation: arrow-bounce-y 1.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tilt-3d-inner {
     transform: none !important;
@@ -597,7 +607,8 @@
   }
   .float-soft,
   .animate-frame-glow,
-  .animate-reveal {
+  .animate-reveal,
+  .animate-arrow-bounce {
     animation: none !important;
   }
 }

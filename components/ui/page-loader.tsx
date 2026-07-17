@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion"
 import { usePathname } from "next/navigation"
 
 /**
- * Intro loader — monochrome, brand mark + progress.
+ * Intro loader - monochrome, brand mark + progress.
  * Full-page wipe on exit. Respects prefers-reduced-motion.
  * Skipped on utility routes (/r redirects, linkbio, curriculo).
  */

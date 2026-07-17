@@ -32,11 +32,10 @@ export default function HomePage() {
       <Hero />
       <ClientsCarousel />
       <ProjectsStack />
+      <About />
+      <TechExpertise />
       <EngineeringApproach />
       <OliverParallax />
-
-      <TechExpertise />
-      <About />
     </>
   )
 }

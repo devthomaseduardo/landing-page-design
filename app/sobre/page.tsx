@@ -37,8 +37,8 @@ const PILLARS = [
 
 const TIMELINE = [
   {
-    date: "08/2023 — Atual",
-    title: "Software Engineer — Freelancer",
+    date: "08/2023 - Atual",
+    title: "Software Engineer - Freelancer",
     text: "Aplicações web, APIs, dashboards e autenticação. Deploy em Vercel, AWS e Linux.",
   },
   {
@@ -49,7 +49,7 @@ const TIMELINE = [
   },
   {
     date: "Em andamento",
-    title: "Engenharia de Software — Anhanguera",
+    title: "Engenharia de Software - Anhanguera",
     text: "Arquitetura de software, cloud e sistemas distribuídos.",
     badge: "Cursando",
   },
@@ -102,7 +102,7 @@ export default function SobrePage() {
               </h2>
               <p className="mt-4 max-w-lg text-sm font-light leading-relaxed text-white/70 sm:text-base">
                 Full Stack com 3+ anos de freela. Transformo processos manuais em
-                plataformas simples e escaláveis — APIs, dashboards e integrações.
+                plataformas simples e escaláveis - APIs, dashboards e integrações.
               </p>
               <p className="mt-3 hidden max-w-lg text-sm font-light leading-relaxed text-white/60 sm:block sm:text-base">
                 Pilares: clareza de produto, performance técnica e estrutura que
@@ -146,7 +146,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Metrics — only on About */}
+      {/* Metrics - only on About */}
       <section id="metricas" className="border-y border-border/25">
         <div className="site-shell">
           <div className="grid grid-cols-2 lg:grid-cols-4">
@@ -174,7 +174,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Pillars — modern strip */}
+      {/* Pillars - modern strip */}
       <section className="py-10 sm:py-14">
         <div className="site-shell">
           <div className="mb-6 flex items-end justify-between gap-4 sm:mb-8">
@@ -208,7 +208,7 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Timeline — vertical modern */}
+      {/* Timeline - vertical modern */}
       <section className="border-t border-border/20 py-10 sm:py-14">
         <div className="site-shell">
           <div className="mb-8 sm:mb-10">
@@ -317,7 +317,7 @@ export default function SobrePage() {
             <span className="text-muted-foreground">em mente?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-sm text-sm font-light text-white/60">
-            Vamos transformar a ideia em produto real — com clareza de escopo e
+            Vamos transformar a ideia em produto real - com clareza de escopo e
             entrega.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-2.5 min-[420px]:flex-row">

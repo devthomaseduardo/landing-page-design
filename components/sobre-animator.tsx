@@ -31,7 +31,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 2. HERO H1 — SPLIT TEXT WORD BY WORD ────────────────────────────
+      // ── 2. HERO H1 - SPLIT TEXT WORD BY WORD ────────────────────────────
       const h1 = document.querySelector<HTMLElement>(".hero-title")
       if (h1) {
         const split = new SplitText(h1, { type: "words,chars" })
@@ -58,7 +58,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 4. STATS — COUNTER ANIMADO ───────────────────────────────────────
+      // ── 4. STATS - COUNTER ANIMADO ───────────────────────────────────────
       const stats = gsap.utils.toArray(".stat-item")
       if (stats.length > 0) {
         gsap.from(stats, {
@@ -72,7 +72,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 5. SEÇÃO "SOBRE" — TEXTO ENTRA DA ESQUERDA ──────────────────────
+      // ── 5. SEÇÃO "SOBRE" - TEXTO ENTRA DA ESQUERDA ──────────────────────
       const aboutText = document.querySelector(".about-text-block")
       if (aboutText) {
         gsap.from(aboutText, {
@@ -105,7 +105,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 7. TIMELINE — CADA ITEM SOBE COM STAGGER ────────────────────────
+      // ── 7. TIMELINE - CADA ITEM SOBE COM STAGGER ────────────────────────
       const timelineSection = document.querySelector(".timeline-section")
       const timelineItems = gsap.utils.toArray(".timeline-item")
       if (timelineSection && timelineItems.length > 0) {
@@ -123,7 +123,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 8. STACK — ÍCONES ENTRAM EM CASCATA ─────────────────────────────
+      // ── 8. STACK - ÍCONES ENTRAM EM CASCATA ─────────────────────────────
       const stackSection = document.querySelector(".stack-section")
       const stackIcons = gsap.utils.toArray(".stack-section [data-stack-icon]")
       if (stackSection && stackIcons.length > 0) {
@@ -142,7 +142,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 9. CARDS DE DIFERENCIAIS — STAGGER GRID ─────────────────────────
+      // ── 9. CARDS DE DIFERENCIAIS - STAGGER GRID ─────────────────────────
       const differentialsGrid = document.querySelector(".diferenciais-grid")
       const differentialCards = gsap.utils.toArray(".diferencial-card")
       if (differentialsGrid && differentialCards.length > 0) {
@@ -161,7 +161,7 @@ export function SobreAnimator() {
         })
       }
 
-      // ── 10. CTA BOTTOM — ENTRA COM SCALE ────────────────────────────────
+      // ── 10. CTA BOTTOM - ENTRA COM SCALE ────────────────────────────────
       const ctaSection = document.querySelector(".cta-section")
       if (ctaSection) {
         gsap.from(ctaSection, {

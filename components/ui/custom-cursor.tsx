@@ -15,7 +15,7 @@ function getCursorCapability() {
 }
 
 /**
- * Light cursor — soft luminous glow that follows the pointer.
+ * Light cursor - soft luminous glow that follows the pointer.
  * Expands on interactive hover. Disabled on touch / reduced motion.
  */
 export function CustomCursor() {

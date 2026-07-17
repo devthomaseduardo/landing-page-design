@@ -12,7 +12,7 @@ export function Process() {
             Do problema ao produto.
           </h2>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Um processo claro em quatro etapas — da descoberta ao deploy.
+            Um processo claro em quatro etapas - da descoberta ao deploy.
           </p>
         </div>
       </Reveal>

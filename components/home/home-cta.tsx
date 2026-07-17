@@ -40,7 +40,7 @@ export function HomeCta() {
           viewport={{ once: true }}
           className="mx-auto mt-4 max-w-md text-sm font-light text-white/50 sm:mt-5 sm:text-base"
         >
-          Vamos transformar a ideia em produto — com clareza de escopo e entrega.
+          Vamos transformar a ideia em produto - com clareza de escopo e entrega.
         </motion.p>
 
         <motion.div

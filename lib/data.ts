@@ -35,175 +35,209 @@ export type Project = {
 export const PROJECTS: Project[] = [
 
   {
-    tag: "Website Institucional Premium",
+    tag: "Website Institucional",
     title: "Homma Design",
-    subtitle: "Experiência digital para showroom de alto padrão",
-    context: "O setor de mobiliário autoral de luxo exige uma apresentação visual impecável e carregamento instantâneo. A marca operava offline há 20 anos.",
-    problem: "Showroom de mobiliário autoral sem presença digital. O negócio dependia exclusivamente de indicações e não conseguia comunicar a sofisticação da marca online.",
-    architecture: "SSG com Next.js App Router para as páginas públicas garantindo TTFB mínimo, com Edge Caching na Vercel e imagens servidas em formato moderno.",
-    solution: "Website editorial premium com narrativa visual, galeria imersiva de projetos e foco em conversão. Arquitetura Next.js com performance máxima e SEO técnico.",
-    challenges: "Equilibrar assets de altíssima resolução com métricas perfeitas de Core Web Vitals (LCP < 2.5s).",
-    result: "Presença digital premium que comunica a essência da marca e gera novos contatos qualificados para o showroom.",
+    subtitle: "Presença digital para mobiliário autoral",
+    context:
+      "A Homma Design precisava de uma presença digital que transmitisse sofisticação, valor dos produtos autorais e a experiência de showroom - com facilidade de contato e apresentação de projetos.",
+    problem:
+      "Marca de mobiliário autoral e interiores sem site institucional à altura da curadoria offline; dependência de indicações e pouca clareza na comunicação digital.",
+    architecture:
+      "Next.js 15 com Static Export, React, TypeScript e Tailwind. Pipeline CI/CD via GitHub Actions com deploy FTP para HostGator.",
+    solution:
+      "Website institucional minimalista com foco em imagens, narrativa visual e conversão - arquitetura preparada para evolução contínua.",
+    challenges:
+      "Equilibrar assets de alta resolução com performance e um fluxo de deploy automatizado em hospedagem compartilhada.",
+    result:
+      "Presença digital premium que comunica a essência da marca e facilita o contato com o showroom.",
     description:
-      "Experiência digital para showroom de mobiliário de alto padrão com foco em apresentação visual, performance e conversão.",
+      "Website institucional para a Homma Design (mobiliário autoral e interiores), com foco em experiência visual, performance e conversão.",
     bullets: [
-      "Direção visual editorial premium",
-      "Performance otimizada — Lighthouse 98+",
-      "SEO técnico estruturado",
+      "Narrativa visual de showroom",
+      "Next.js Static Export + CI/CD",
+      "Deploy automatizado (GitHub Actions → FTP)",
     ],
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Vercel",
-    ],
+    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     image: "/projects/homma-projetos.webp",
-    href: "https://hommadesign.com.br",
+    href: "https://hommadesign.com.br/",
     year: "2026",
   },
 
 
   {
-    tag: "Projeto Proprietário",
+    tag: "Produto SaaS · Monorepo",
     title: "TERON OS",
-    subtitle: "Sistema operacional empresarial",
-    context: "TERON OS é um sistema operacional empresarial criado para automatizar e padronizar toda a operação de uma empresa de serviços digitais. A plataforma integra CRM, propostas comerciais, contratos digitais, onboarding de clientes, gestão financeira, projetos, automações e inteligência artificial em um único ecossistema, reduzindo tarefas manuais e oferecendo uma experiência profissional do primeiro contato até o pós-venda.",
-    problem: "Empresas de serviços digitais sofrem com processos fragmentados, tarefas operacionais manuais repetitivas e falta de centralização entre vendas, financeiro e entregas.",
-    architecture: "Arquitetura multi-tenant robusta, integrando microsserviços de automação com LLMs para assistentes de IA, banco relacional para consistência financeira e APIs REST.",
-    solution: "Um sistema operacional empresarial que conecta processos comerciais, financeiros e operacionais em um único ambiente inteligente, criado para transformar a forma como empresas de tecnologia gerenciam seus projetos e clientes.",
-    challenges: "Consolidar múltiplos fluxos complexos (CRM, contratos, faturamento) em um único dashboard de alta performance e tempo de resposta otimizado.",
-    result: "Automação operacional de ponta a ponta, reduzindo trabalho manual administrativo e centralizando a inteligência do negócio.",
-    description: "Um sistema operacional empresarial que conecta processos comerciais, financeiros e operacionais em um único ambiente inteligente, criado para transformar a forma como empresas de tecnologia gerenciam seus projetos e clientes.",
+    subtitle: "Sistema operacional da empresa de serviços digitais",
+    context:
+      "Monorepo da plataforma TERON: Site, OS (centro de comando), Workspace (portal do cliente) e API compartilhada - do lead ao pagamento, na mesma verdade.",
+    problem:
+      "Operação fragmentada entre CRM, propostas, projetos e financeiro; cliente e time sem a mesma visão do andamento.",
+    architecture:
+      "Monorepo pnpm com Vite + React + React Router no front, API Node e design system inspirado em Linear/Stripe.",
+    solution:
+      "OS para o time operar (CRM, propostas, forecast, financeiro, projetos) e Workspace para o cliente aprovar, enviar material, conversar e pagar - mesma API.",
+    challenges:
+      "Unificar o ciclo lead → proposta → projeto → fatura sem misturar operação interna com portal do cliente.",
+    result:
+      "Fluxo ponta a ponta: lead ganho vira conta e projeto; ações do cliente no Workspace refletem progresso e financeiro no OS.",
+    description:
+      "Centro de comando da TERON: CRM, propostas, projetos e financeiro no mesmo ecossistema - com o cliente acompanhando no Workspace.",
     bullets: [
-      "CRM, funil comercial e propostas",
-      "Contratos digitais e onboarding",
-      "Financeiro e gestão de projetos",
-      "Workspace e assistente de IA",
+      "CRM, funil e forecast de propostas",
+      "Projetos e financeiro no mesmo ciclo",
+      "API única para OS + Workspace",
+      "Monorepo Site · OS · Workspace · API",
     ],
-    stack: [
-      "Next.js",
-      "TypeScript",
-      "Node.js",
-      "PostgreSQL",
-      "Docker",
-      "AWS",
-    ],
+    stack: ["React", "TypeScript", "Node.js", "Vite", "Tailwind CSS"],
     image: "/projects/teron-os.webp",
     year: "2026",
   },
 
 
   {
-    tag: "Projeto Proprietário",
-    title: "TERON Studio Workspace",
-    subtitle: "Workspace inteligente de projetos",
-    context: "TERON Studio Workspace é um workspace inteligente desenvolvido para centralizar toda a gestão de projetos digitais em um único ambiente. A plataforma reúne cronograma, aprovações, comunicação, arquivos, pagamentos e acompanhamento em tempo real, proporcionando mais transparência para o cliente e mais organização durante todo o desenvolvimento do projeto.",
-    problem: "A falta de visibilidade no andamento de projetos causa ansiedade em clientes e desalinhamento de expectativas no time de desenvolvimento.",
-    architecture: "SPA em React e Next.js com atualizações em tempo real (WebSockets), armazenamento seguro de arquivos e integrações de pagamentos seguras.",
-    solution: "Uma plataforma para gerenciamento transparente de projetos digitais, desenvolvida para oferecer aos clientes uma experiência organizada durante todas as etapas do desenvolvimento.",
-    challenges: "Gerenciar atualizações de status em tempo real e uploads de grandes volumes de arquivos sem impactar a performance geral do app.",
-    result: "Experiência de onboarding e acompanhamento premium para o cliente final, aumentando a fidelidade e a satisfação com a entrega.",
-    description: "Uma plataforma para gerenciamento transparente de projetos digitais, desenvolvida para oferecer aos clientes uma experiência organizada durante todas as etapas do desenvolvimento.",
+    tag: "Produto SaaS · Portal do cliente",
+    title: "TERON Workspace",
+    subtitle: "Portal do cliente na mesma verdade do OS",
+    context:
+      "Superfície do monorepo TERON em que o cliente acompanha o projeto: aprovações, materiais, mensagens e faturas - sem misturar com a operação interna.",
+    problem:
+      "Clientes sem visibilidade do andamento; aprovações e materiais espalhados em e-mail e chat, desalinhando time e entrega.",
+    architecture:
+      "SPA React (Vite + React Router) consumindo a mesma API do OS; design system compartilhado no monorepo.",
+    solution:
+      "Área do cliente para aprovar itens (progresso sobe no OS), enviar material, conversar na timeline e pagar faturas.",
+    challenges:
+      "Manter UX clara para o cliente e sincronização imediata com o centro de comando do time.",
+    result:
+      "Transparência ponta a ponta: o que o cliente faz no portal alimenta o OS em tempo de negócio real.",
+    description:
+      "Portal do cliente TERON: aprovações, materiais, comunicação e pagamentos na mesma verdade da operação.",
     bullets: [
-      "Dashboard interativo e timeline",
-      "Área exclusiva do cliente",
-      "Aprovações e controle de arquivos",
-      "Interface moderna estilo SaaS",
+      "Aprovações que avançam o projeto",
+      "Envio de material e timeline",
+      "Faturas e acompanhamento",
+      "Mesma API e design system do OS",
     ],
-    stack: [
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Tailwind CSS",
-      "Vercel",
-    ],
+    stack: ["React", "TypeScript", "Node.js", "Vite", "Tailwind CSS"],
     image: "/projects/teron-workspace.webp",
     year: "2026",
   },
 
   {
-    tag: "Plataforma de Contratos Automáticos",
-    title: "Paper Contratos",
-    subtitle: "Geração e assinatura digital automatizada",
-    context: "Escritórios jurídicos e imobiliárias perdendo horas na confecção manual de contratos.",
-    problem: "Lentidão e erros humanos na criação de documentos baseados em templates complexos.",
-    architecture: "Next.js App Router para frontend, Node.js + Prisma para processamento e webhooks.",
-    solution: "Plataforma SaaS que injeta variáveis dinamicamente em templates estruturados e integra APIs de assinatura digital via webhooks.",
-    challenges: "Parseamento confiável de dezenas de variáveis aninhadas em templates ricos preservando formatação.",
-    result: "Redução de horas de trabalho manual para minutos, eliminando falhas de preenchimento.",
-    description: "SaaS de geração de contratos dinâmicos integrados com assinatura digital e workflows automatizados.",
+    tag: "SaaS · Documentos com IA",
+    title: "Minuta Fácil",
+    subtitle: "Contratos, NDAs, propostas e CVs com IA",
+    context:
+      "Workspace multi-usuário para criar contratos, NDAs, propostas, faturas, currículos e cartas com visual de documento oficial brasileiro e assistência de IA (Gemini).",
+    problem:
+      "Montagem manual de minutas é lenta, inconsistente e sem versionamento por tipo de documento nem perfil por usuário.",
+    architecture:
+      "Monorepo: React 19 + Vite + Tailwind no front; Node/Express + TypeScript no back; Firebase Auth; PostgreSQL (Neon); Gemini só no servidor.",
+    solution:
+      "Geração de minutas no navegador com seções por tipo, rascunhos isolados, perfil/clientes na nuvem, exportação PDF e apoio via Pix/Stripe.",
+    challenges:
+      "Completude inteligente por tipo de documento, multi-tenant por user_id e IA restrita ao backend por segurança.",
+    result:
+      "Minutas profissionais em minutos, com API REST versionada e painel multi-usuário em produção.",
+    description:
+      "Workspace para contratos, NDAs, propostas, faturas e currículos com visual de ofício BR, multi-usuário e IA (Gemini).",
     bullets: [
-      "Geração automática de PDFs estruturados",
-      "Integração com APIs de assinatura",
-      "Webhooks de status",
+      "Tipos: contrato, NDA, proposta, CV, fatura…",
+      "IA de cláusulas (Gemini no backend)",
+      "Firebase Auth + PostgreSQL multi-tenant",
+      "Exportação PDF e pagamentos (Pix/Stripe)",
     ],
-    stack: ["Next.js", "TypeScript", "Node.js", "Prisma"],
+    stack: ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
     image: "/projects/paper-contratos.webp",
-    href: "https://paper-contracts.vercel.app/",
+    href: "https://minuta-facil-frontend.vercel.app/",
     year: "2025",
   },
 
   {
-    tag: "Landing Page de Varejo",
-    title: "Sleep House Campinas",
-    subtitle: "Catálogo virtual de alto padrão e otimizado",
-    context: "Maior rede multimarcas de colchões precisava de um catálogo rápido e direcionado a leads qualificados no WhatsApp.",
-    problem: "Plataformas de e-commerce tradicionais geravam páginas pesadas que prejudicavam conversão em campanhas pagas.",
-    architecture: "Arquitetura Jamstack com Next.js (SSG) servindo milhares de variações de produtos em milissegundos.",
-    solution: "Um e-commerce híbrido extremamente veloz com integração direta via WhatsApp para negociação B2C VIP.",
-    challenges: "Geração estática de milhares de páginas (Static Site Generation) com revalidação inteligente.",
-    result: "Aumento significativo na captação de leads qualificados devido à otimização de performance.",
-    description: "Catálogo digital de alta performance focado na geração de leads qualificados e atendimento consultivo VIP.",
+    tag: "Showroom Digital · Multi-tenant",
+    title: "Sleep House",
+    subtitle: "Showroom digital multi-unidade",
+    context:
+      "Plataforma SPA de alta performance para o showroom digital da Sleep House: uma base de código que atende várias filiais via subpastas no domínio.",
+    problem:
+      "Manter sites separados por loja e páginas pesadas de e-commerce tradicional prejudicava campanhas e a experiência de compra consultiva.",
+    architecture:
+      "SPA React 18 + Vite + TanStack Router + Tailwind CSS v4 + Framer Motion. Roteamento por unidade na URL; catálogo, WhatsApp, Maps, SEO e GTM por filial.",
+    solution:
+      "Concierge digital (funil de dor → recomendação → WhatsApp), curadoria de produtos com lightbox e analytics avançado na dataLayer.",
+    challenges:
+      "Personalizar interface, catálogo e tracking por unidade sem redirecionamentos e sem múltiplos deploys.",
+    result:
+      "Uma plataforma multi-tenant para Galeria, Polo, Iguatemi e Kenedy - conversão e UX premium em produção.",
+    description:
+      "Showroom digital multi-tenant da Sleep House: catálogo, concierge e analytics por unidade, com SPA de alta performance.",
     bullets: [
-      "Integração direta de orçamento",
-      "Geração Estática super rápida",
-      "Catálogo dinâmico gerenciável",
+      "Multi-tenant por subpasta (unidades)",
+      "Concierge digital → WhatsApp",
+      "Analytics (dataLayer / GTM)",
+      "UX premium com Framer Motion",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     image: "/projects/sleep-house-campinas.webp",
-    href: "https://sleephouseloja.com.br",
+    href: "https://www.sleephouseloja.com.br/",
     year: "2026",
   },
 
   {
-    tag: "Landing Page Institucional",
-    title: "Academia Spinmove",
-    subtitle: "Presença digital para academia local",
-    context: "Necessidade de modernizar a presença online e facilitar captação de novas matrículas locais.",
-    problem: "Sem site oficial, as campanhas online convertiam pouco devido a falta de credibilidade.",
-    architecture: "Landing page estruturada em React com integração ao sistema de gestão CRM para lead imediato.",
-    solution: "Interface altamente otimizada, calendário de aulas dinâmico e botões focados em ativação.",
-    challenges: "Design visual imersivo e agressivo focado no mundo fitness, mantendo a performance.",
-    result: "Aumento significativo na captação de leads e consolidação da marca na região.",
-    description: "Landing page focada em aquisição de clientes com cronograma, planos e forte identidade visual.",
+    tag: "Landing Page de Conversão",
+    title: "SpinMove",
+    subtitle: "Bike indoor e bootcamp - alta conversão",
+    context:
+      "Landing page completa e responsiva para o estúdio SpinMove (bike indoor e bootcamp), com presença digital moderna e foco em matrículas.",
+    problem:
+      "Sem site oficial forte, campanhas e indicação perdiam credibilidade e o caminho até a matrícula era confuso.",
+    architecture:
+      "React + TypeScript + Tailwind CSS, com animações, parallax e CTAs diretos para WhatsApp (deploy na Vercel).",
+    solution:
+      "Página modular (planos, benefícios, horários, modais) guiando o visitante até o agendamento/matrícula.",
+    challenges:
+      "Identidade visual fitness forte e imersiva sem sacrificar performance e clareza no mobile.",
+    result:
+      "Presença digital pronta para campanhas, com conversão direta via WhatsApp.",
+    description:
+      "Landing page do estúdio SpinMove: design moderno, animações e integração WhatsApp para captação de matrículas.",
     bullets: [
-      "Conversão direta para CRM",
-      "Calendário em tempo real",
-      "Design vibrante",
+      "Planos, benefícios e horários",
+      "Animações e parallax",
+      "CTA direto para WhatsApp",
+      "Componentes reutilizáveis em React",
     ],
-    stack: ["React", "Tailwind CSS", "Framer Motion"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
     image: "/projects/academia-spinmove.webp",
     href: "https://spinmovecom.vercel.app/",
     year: "2025",
   },
 
   {
-    tag: "Landing Page Educacional",
+    tag: "Landing + Admin",
     title: "Yázigi Swiss Park",
-    subtitle: "Escola de idiomas com plataforma integrada",
-    context: "A unidade precisava de uma forma mais prática de captar alunos e disponibilizar informações sobre turmas.",
-    problem: "Informações fragmentadas em redes sociais reduziam as matrículas via tráfego orgânico e pago.",
-    architecture: "Landing page construída em Next.js para maximizar o SEO local (Local Search).",
-    solution: "Portal educacional completo com testes de nível online, turmas, depoimentos e blog integrado.",
-    challenges: "Integrar um teste de proficiência online (quiz interativo) com captura de leads antes do resultado.",
-    result: "Crescimento sustentável de matrículas orgânicas através de buscas locais por cursos de inglês.",
-    description: "Landing page moderna focado em captura orgânica, com teste interativo e estruturação de cursos.",
+    subtitle: "Landing, diagnóstico e painel de leads",
+    context:
+      "Landing e painel admin da unidade Yázigi Swiss Park (Campinas): cursos, depoimentos, galeria, diagnóstico de inglês e captura de leads no Supabase.",
+    problem:
+      "Informações e leads espalhados; falta de um funil digital com diagnóstico e operação interna para a equipe da unidade.",
+    architecture:
+      "React 18 + Vite + TypeScript + Tailwind + shadcn/ui; Supabase (Auth, leads, diagnósticos); React Query; Framer Motion.",
+    solution:
+      "Site de conversão com diagnóstico interativo, WhatsApp, GTM e área /admin com listagens de leads e diagnósticos.",
+    challenges:
+      "Fluxo de diagnóstico em modal com persistência e painel autenticado sem sobrecarregar a landing.",
+    result:
+      "Canal digital unificado: marketing, geração de demanda e operação de leads na mesma aplicação.",
+    description:
+      "Landing page e admin da Yázigi Swiss Park: cursos, diagnóstico de inglês, leads no Supabase e painel interno.",
     bullets: [
-      "Teste de nivelamento interativo",
-      "Local SEO estruturado",
-      "Geração inteligente de leads",
+      "Diagnóstico de inglês (modal)",
+      "Leads e admin no Supabase",
+      "Depoimentos, galeria e cursos",
+      "GTM + WhatsApp flutuante",
     ],
-    stack: ["Next.js", "Node.js", "PostgreSQL"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     image: "/projects/yagizi-swissparck.webp",
     href: "https://www.yaziswissparkcampinas.com.br/",
     year: "2025",
@@ -213,16 +247,23 @@ export const PROJECTS: Project[] = [
     tag: "Landing Page",
     title: "Instituto Kell",
     subtitle: "Clínica médica multidisciplinar",
-    context: "Necessidade de apresentar o corpo clínico e facilitar agendamentos diários via WhatsApp de forma organizada.",
-    problem: "Alta fricção na marcação de consultas por telefone e pacientes confusos sobre as especialidades disponíveis.",
-    architecture: "SPA em React super leve com roteamento client-side para navegação fluida.",
-    solution: "Apresentação limpa (clean design), perfis dos profissionais e integração direta ao WhatsApp da recepção para cada especialidade.",
-    challenges: "Acessibilidade e usabilidade voltadas a um público de faixa etária mais ampla.",
-    result: "Fluxo de atendimento simplificado, reduzindo ligações demoradas e aumentando consultas agendadas digitalmente.",
-    description: "Landing page limpa e humanizada para agendamento rápido, focado em conversão direta para o corpo clínico.",
+    context:
+      "Necessidade de apresentar o corpo clínico e facilitar agendamentos diários via WhatsApp de forma organizada.",
+    problem:
+      "Alta fricção na marcação de consultas por telefone e pacientes confusos sobre as especialidades disponíveis.",
+    architecture:
+      "SPA em React leve com roteamento client-side para navegação fluida.",
+    solution:
+      "Apresentação limpa, perfis dos profissionais e integração direta ao WhatsApp da recepção por especialidade.",
+    challenges:
+      "Acessibilidade e usabilidade para um público de faixa etária mais ampla.",
+    result:
+      "Fluxo de atendimento simplificado, com menos ligações longas e mais consultas agendadas digitalmente.",
+    description:
+      "Landing page limpa e humanizada para agendamento rápido, com conversão direta para o corpo clínico.",
     bullets: [
       "Filtros de especialidades",
-      "Clean & Acessível",
+      "Clean & acessível",
       "Roteamento de atendimento",
     ],
     stack: ["React", "TypeScript", "Tailwind CSS"],
@@ -231,22 +272,30 @@ export const PROJECTS: Project[] = [
   },
 
   {
-    tag: "Landing Page",
+    tag: "Landing Page · Workstations",
     title: "Hazap Workstation",
-    subtitle: "Gestão inteligente para coworking",
-    context: "Espaço de escritórios B2B precisava organizar disponibilidade de salas e posições virtuais.",
-    problem: "Ocupação não otimizada por falta de visualização pública e clara de espaços.",
-    architecture: "Interface administrativa complexa consumindo APIs REST.",
-    solution: "Catálogo de espaços com visualização interativa e sistema de solicitação de aluguel facilitado.",
-    challenges: "Gestão visual de grids e plantas de escritório.",
-    result: "Taxa de ocupação maximizada através da automação do pipeline de novos locatários.",
-    description: "Solução B2B para visualização e captação comercial de um espaço corporativo e coworking.",
+    subtitle: "Estações de trabalho de alta performance",
+    context:
+      "Landing da Hazap para workstations personalizadas voltadas a arquitetura, engenharia, IA e desenvolvimento de software.",
+    problem:
+      "Visitante técnico precisa entender valor (consultoria, montagem sob medida, benchmarks) e chegar ao comercial com contexto.",
+    architecture:
+      "SPA React 18 + Vite + TypeScript + Tailwind + shadcn/ui; Framer Motion; deploy estático (raiz ou subpasta /workstation/).",
+    solution:
+      "Landing de conversão com seções de prova, perfis profissionais, FAQ, benchmarks e CTAs WhatsApp pré-contextualizados.",
+    challenges:
+      "Narrativa comercial densa em SPA única, tema escuro e builds distintos (demo Vercel vs subpasta de produção).",
+    result:
+      "Showroom digital de workstations com pipeline comercial via WhatsApp e SEO/OG configurados.",
+    description:
+      "Site institucional Hazap Workstation: workstations sob medida, prova social e conversão via WhatsApp.",
     bullets: [
-      "Catálogo inteligente",
-      "Pipeline integrado",
-      "Gestão de demandas",
+      "Fluxo comercial em página única",
+      "CTAs WhatsApp contextualizados",
+      "Tema escuro + animações",
+      "Build para raiz ou /workstation/",
     ],
-    stack: ["Next.js", "TypeScript", "PostgreSQL"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     image: "/projects/hazap-workstation.webp",
     href: "https://hazap.com.br/workstation/",
     year: "2026",

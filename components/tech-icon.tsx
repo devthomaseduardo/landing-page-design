@@ -29,6 +29,7 @@ const TECH_ICON_MAP: Record<string, { icon: string; color: string }> = {
   "VS Code API": { icon: "logos:visual-studio-code", color: "#007ACC" },
   Git: { icon: "logos:git-icon", color: "#F05032" },
   Figma: { icon: "logos:figma", color: "#F24E1E" },
+  Vite: { icon: "logos:vitejs", color: "#646CFF" },
 }
 
 export function TechIcon({

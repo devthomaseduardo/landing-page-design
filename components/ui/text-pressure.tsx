@@ -1,7 +1,7 @@
 "use client"
 
 // Component ported from https://codepen.io/JuanFuentes/full/rgXKGQ
-// React Bits — TextPressure (JS + CSS)
+// React Bits - TextPressure (JS + CSS)
 
 import {
   useCallback,

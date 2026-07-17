@@ -8,8 +8,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { cliente } = await params
   const proposal = getProposal(cliente)
   return {
-    title: proposal ? `Proposta — ${proposal.projectTitle}` : "Proposta Comercial",
-    description: "Proposta comercial personalizada — documento privado.",
+    title: proposal ? `Proposta - ${proposal.projectTitle}` : "Proposta Comercial",
+    description: "Proposta comercial personalizada - documento privado.",
     robots: { index: false, follow: false },
   }
 }

@@ -1,4 +1,4 @@
-# Thomas Eduardo — Portfólio Profissional
+# Thomas Eduardo - Portfólio Profissional
 
 **Product Engineer Full Stack** | Next.js • TypeScript • Node.js • AWS  
 São Paulo, Brasil

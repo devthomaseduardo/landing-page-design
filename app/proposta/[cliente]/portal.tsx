@@ -47,7 +47,7 @@ export function ProposalPortal({ proposal }: { proposal: ProposalData }) {
 
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Progress nav — lateral */}
+      {/* Progress nav - lateral */}
       <nav className="fixed left-6 top-1/2 z-50 hidden -translate-y-1/2 flex-col gap-3 xl:flex">
         {NAV_SECTIONS.map((s) => (
           <a
@@ -175,7 +175,7 @@ function AboutSection() {
           <h3 className="font-display text-2xl font-semibold text-foreground">Thomas Eduardo R. Nascimento</h3>
           <p className="mt-1 font-mono text-sm text-muted-foreground">Software Engineer · Full Stack Developer</p>
           <div className="mt-5 space-y-3 text-base leading-relaxed text-muted-foreground">
-            <p>Desenvolvo aplicações web completas desde 2023 — do banco de dados à interface — com foco em clareza de produto, performance técnica e resultado real para o negócio.</p>
+            <p>Desenvolvo aplicações web completas desde 2023 - do banco de dados à interface - com foco em clareza de produto, performance técnica e resultado real para o negócio.</p>
             <p>Cada projeto que assumo é tratado como um produto: começo entendendo o problema antes de escrever qualquer linha de código, e termino com uma entrega documentada e publicada.</p>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -344,7 +344,7 @@ function InvestmentSection({ proposal }: { proposal: ProposalData }) {
           <p className="text-sm leading-relaxed text-muted-foreground italic">
             &ldquo;{proposal.personalNote}&rdquo;
           </p>
-          <p className="mt-3 font-mono text-xs text-muted-foreground/50">— Thomas Eduardo</p>
+          <p className="mt-3 font-mono text-xs text-muted-foreground/50">- Thomas Eduardo</p>
         </div>
       </div>
     </Section>

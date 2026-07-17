@@ -3,7 +3,6 @@
 import { ENGINEERING_APPROACH } from "@/lib/data"
 import { Search, Network, Code, TestTube, Rocket, IterationCcw } from "lucide-react"
 import { motion } from "framer-motion"
-import { MobileCarousel } from "@/components/ui/mobile-carousel"
 
 const ICONS = [Search, Network, Code, TestTube, Rocket, IterationCcw]
 
@@ -41,16 +40,13 @@ export function EngineeringApproach() {
           </motion.p>
         </div>
 
-        <MobileCarousel
-          itemClassName="w-[min(82vw,20rem)]"
-          desktopClassName="sm:grid sm:grid-cols-2 sm:gap-3 lg:grid-cols-3"
-        >
+        <div className="flex flex-col gap-3">
           {ENGINEERING_APPROACH.map((item, i) => {
             const Icon = ICONS[i] || Code
             return (
               <div
                 key={item.title}
-                className="group relative flex h-full min-h-[11.5rem] flex-col rounded-xl border border-border/20 bg-transparent p-4 transition-colors hover:border-white/15 hover:bg-white/[0.02] sm:min-h-0 sm:rounded-2xl sm:p-5 md:p-6"
+                className="group relative flex flex-col rounded-xl border border-border/20 bg-transparent p-4 transition-colors hover:border-white/15 hover:bg-white/[0.02] sm:rounded-2xl sm:p-5 md:p-6"
               >
                 <div className="mb-3 flex items-center justify-between sm:mb-4">
                   <div className="flex size-9 items-center justify-center rounded-lg bg-secondary/50 text-foreground/80 sm:size-10 sm:rounded-xl">
@@ -69,7 +65,7 @@ export function EngineeringApproach() {
                   {item.description}
                 </p>
 
-                <div className="mt-auto hidden pt-5 sm:block">
+                <div className="mt-auto pt-5">
                   <p className="border-t border-border/20 pt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground/50">
                     {item.detail}
                   </p>
@@ -77,7 +73,7 @@ export function EngineeringApproach() {
               </div>
             )
           })}
-        </MobileCarousel>
+        </div>
       </div>
     </section>
   )

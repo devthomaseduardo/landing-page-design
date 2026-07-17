@@ -28,7 +28,7 @@ export const CV_SKILLS = [
 export const CV_EXPERIENCE = [
   {
     role: "Desenvolvedor Full Stack Freelancer",
-    period: "08/2023 — Atual",
+    period: "08/2023 - Atual",
     items: [
       "Sites, landing pages, sistemas administrativos, portais e aplicações web para negócios locais e projetos digitais.",
       "Interfaces modernas e responsivas com React, Next.js, TypeScript e Tailwind, com foco em performance e conversão.",
@@ -38,17 +38,17 @@ export const CV_EXPERIENCE = [
     ],
   },
   {
-    role: "Auxiliar Administrativo — CCAA Escola de Idiomas",
-    period: "11/2023 — 01/2024",
+    role: "Auxiliar Administrativo - CCAA Escola de Idiomas",
+    period: "11/2023 - 01/2024",
     items: ["Atendimento ao público, organização de matrículas, suporte administrativo e rotinas internas."],
   },
   {
-    role: "Assistente de Vendas — Lojas Renner",
-    period: "04/2021 — 02/2023",
+    role: "Assistente de Vendas - Lojas Renner",
+    period: "04/2021 - 02/2023",
     items: ["Atendimento em ambiente de alta demanda, suporte ao fluxo de vendas e trabalho em equipe."],
   },
   {
-    role: "Auxiliar de Escritório — MRB Express",
+    role: "Auxiliar de Escritório - MRB Express",
     period: "Anterior",
     items: ["Acompanhamento de entregas e prazos logísticos, emissão de notas e minutas de transporte."],
   },
@@ -88,15 +88,15 @@ export const CV_PROJECTS = [
 ]
 
 export const CV_EDUCATION = {
-  degree: "Engenharia de Software — Anhanguera",
+  degree: "Engenharia de Software - Anhanguera",
   status: "Em andamento",
 }
 
 export const CV_CERTS = [
-  "AWS re/Start Graduate — Amazon Web Services, 2024",
-  "API REST & JWT Authentication — Ada, 2024",
-  "User Experience Essentials — FIAP, 2024",
-  "Fundamentos do Hardware do Computador — Cisco Networking Academy",
+  "AWS re/Start Graduate - Amazon Web Services, 2024",
+  "API REST & JWT Authentication - Ada, 2024",
+  "User Experience Essentials - FIAP, 2024",
+  "Fundamentos do Hardware do Computador - Cisco Networking Academy",
 ]
 
 export const CV_LANGUAGES = [

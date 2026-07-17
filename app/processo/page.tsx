@@ -268,7 +268,7 @@ export default function ProcessPage() {
                   <p className="label-kicker mb-3">Investimento</p>
                   <h2 className="text-h2 text-white">Como é calculado.</h2>
                   <p className="mt-6 text-[15px] leading-relaxed font-light text-white/70 text-pretty">
-                    Cada projeto é estimado conforme complexidade, prazo e integrações. Depois da análise, você recebe uma proposta personalizada e definitiva — sem custos extras surpresas.
+                    Cada projeto é estimado conforme complexidade, prazo e integrações. Depois da análise, você recebe uma proposta personalizada e definitiva - sem custos extras surpresas.
                   </p>
                   <div className="mt-8 flex flex-wrap gap-2.5">
                     {["Complexidade", "Prazo", "Integrações", "Escopo"].map((item) => (

@@ -11,7 +11,7 @@ export type RedirectEntry = {
 
 /**
  * Short branded redirects: /r/[slug]
- * Use in IG bio, proposals, QR codes — all traffic is trackable.
+ * Use in IG bio, proposals, QR codes - all traffic is trackable.
  */
 export const REDIRECTS: Record<string, RedirectEntry> = {
   wa: {

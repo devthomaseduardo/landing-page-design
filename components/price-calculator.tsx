@@ -98,7 +98,7 @@ export function PriceCalculator() {
       </a>
       
       <p className="mt-4 text-center text-xs text-muted-foreground/60 leading-relaxed max-w-xs mx-auto">
-        Estimativa inicial — o valor final é fechado após alinharmos o escopo.
+        Estimativa inicial - o valor final é fechado após alinharmos o escopo.
       </p>
     </div>
   )
