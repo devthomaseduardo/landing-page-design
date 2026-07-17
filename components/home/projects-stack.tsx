@@ -21,7 +21,7 @@ export function ProjectsStack({
   })
 
   // Extra end slot (arrow) needs a bit more horizontal travel
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"])
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"])
 
   const scrollToNextSection = () => {
     const section = containerRef.current
@@ -89,51 +89,6 @@ export function ProjectsStack({
               </div>
             ))}
 
-            {/* End cue: large modern animated arrow pointing down */}
-            <div className="flex w-24 flex-shrink-0 items-center justify-center sm:w-32 lg:w-40">
-              <button
-                type="button"
-                onClick={scrollToNextSection}
-                aria-label="Continuar para a próxima seção"
-                className="group relative flex flex-col items-center gap-5 outline-none"
-              >
-                <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-white/40 transition-colors group-hover:text-white/70">
-                  Continuar
-                </span>
-
-                <span className="relative flex size-28 items-center justify-center sm:size-36 lg:size-40">
-                  {/* Soft pulse rings */}
-                  <motion.span
-                    className="absolute inset-0 rounded-full border border-white/10"
-                    animate={{ scale: [1, 1.18, 1], opacity: [0.35, 0, 0.35] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
-                  />
-                  <motion.span
-                    className="absolute inset-3 rounded-full border border-white/15 sm:inset-4"
-                    animate={{ scale: [1, 1.12, 1], opacity: [0.45, 0.05, 0.45] }}
-                    transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut", delay: 0.35 }}
-                  />
-
-                  <motion.span
-                    className="relative flex size-20 items-center justify-center rounded-full border border-white/20 bg-white/[0.06] text-white shadow-[0_0_48px_rgba(255,255,255,0.08)] backdrop-blur-md transition-colors group-hover:border-white/35 group-hover:bg-white/[0.1] sm:size-24 lg:size-28"
-                    animate={{ y: [0, 10, 0] }}
-                    transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                  >
-                    <ArrowDown
-                      className="size-10 sm:size-12 lg:size-14"
-                      strokeWidth={1.25}
-                    />
-                  </motion.span>
-                </span>
-
-                <motion.span
-                  className="h-10 w-px bg-gradient-to-b from-white/40 to-transparent sm:h-12"
-                  animate={{ scaleY: [0.55, 1, 0.55], opacity: [0.35, 0.85, 0.35] }}
-                  transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-                  style={{ originY: 0 }}
-                />
-              </button>
-            </div>
           </motion.div>
         </div>
 

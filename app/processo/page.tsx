@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Check, MessageCircleQuestion } from "lucide-react"
-import { CONTACT } from "@/lib/data"
+import { CONTACT, SERVICES } from "@/lib/data"
 import { motion } from "framer-motion"
 import { PageAnimator } from "@/components/page-animator"
 import { Icon } from "@iconify/react"
@@ -286,51 +286,53 @@ export default function ProcessPage() {
         </div>
       </section>
 
-      {/* Deliverables */}
+      {/* Services / Types of Projects */}
       <section className="py-16 sm:py-24 border-t border-white/5">
-        <div className="site-shell max-w-6xl mx-auto">
-          <div className="mb-16 sm:mb-24 text-center sm:mb-16">
-            <p className="label-kicker mb-3">Entregáveis</p>
-            <h2 className="text-h2 text-white">O que você recebe.</h2>
+        <div className="site-shell">
+          <div className="mb-16 sm:mb-24 max-w-2xl">
+            <p className="label-kicker mb-3">O que fazemos</p>
+            <h2 className="text-h2 text-white">Tipos de projetos.</h2>
           </div>
           
-          <div className="relative mx-auto w-full">
-            {/* Desktop Horizontal Line connecting the steps (behind them) */}
-            <div className="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-px bg-white/10 z-0" />
-            <div className="hidden lg:block absolute top-[28px] left-[5%] right-[5%] h-px bg-gradient-to-r from-blue-500 via-purple-500 to-transparent z-0 opacity-50" />
+          <div className="flex flex-col border-t border-white/10">
+            {SERVICES.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05, duration: 0.5 }}
+                className="group flex flex-col md:flex-row md:items-start border-b border-white/10 py-8 sm:py-10 transition-colors hover:bg-white/[0.02]"
+              >
+                {/* Number */}
+                <div className="mb-4 md:mb-0 md:w-1/6">
+                  <span className="font-mono text-xs font-medium text-white/40">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                </div>
 
-            {/* Mobile Vertical Line connecting the steps (behind them) */}
-            <div className="lg:hidden absolute left-[28px] top-6 bottom-6 w-px bg-white/10 z-0" />
+                {/* Title */}
+                <div className="mb-4 md:mb-0 md:w-2/6">
+                  <h3 className="font-display text-xl font-medium tracking-tight text-white/90 group-hover:text-white transition-colors max-w-[200px]">
+                    {item.title}
+                  </h3>
+                </div>
 
-            <div className="flex flex-col lg:flex-row lg:justify-between space-y-10 lg:space-y-0 relative z-10">
-              {DELIVERABLES.map((item, i) => (
-                <motion.div
-                  key={item.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="relative flex flex-row lg:flex-col items-start lg:items-center w-full lg:w-[18%] group"
-                >
-                  {/* Step Node (Circle) */}
-                  <div className="shrink-0 flex size-14 items-center justify-center rounded-full border-4 border-background bg-[#121212] transition-colors duration-300 group-hover:border-blue-500/30 group-hover:bg-blue-500/10 shadow-[0_0_0_1px_rgba(255,255,255,0.1)] relative z-10">
-                    <span className="font-mono text-sm font-bold text-white/80 group-hover:text-blue-400 transition-colors">
-                      {item.id}
-                    </span>
-                  </div>
-
-                  {/* Step Content */}
-                  <div className="ml-6 lg:ml-0 lg:mt-6 lg:text-center">
-                    <h3 className="font-display text-lg font-semibold text-white mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-[13px] font-light leading-relaxed text-white/60">
-                      {item.text}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                {/* Description & Features */}
+                <div className="md:w-3/6">
+                  <p className="text-[15px] font-light leading-relaxed text-white/50 group-hover:text-white/70 transition-colors max-w-lg mb-6">
+                    {item.description}
+                  </p>
+                  <ul className="flex flex-wrap gap-2">
+                    {item.features.map((f) => (
+                      <li key={f} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-white/50 transition-colors group-hover:bg-white/10 group-hover:text-white/70">
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
