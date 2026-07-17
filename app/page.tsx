@@ -24,9 +24,9 @@ const OliverParallax = dynamic(() => import("@/components/home/oliver-parallax")
 })
 
 export const metadata: Metadata = {
-  title: "Thomas Eduardo — Software Engineer",
+  title: "Thomas Eduardo | Full Stack Software Engineer | São Paulo",
   description:
-    "Engenheiro de Software Full Stack em São Paulo. Aplicações web, sistemas internos, APIs e produtos digitais — da arquitetura ao deploy.",
+    "Thomas Eduardo | Engenheiro de Software Full Stack em São Paulo. Especialista em Next.js, TypeScript, React e soluções digitais modernas, performáticas e escaláveis. Portfólio com projetos reais, processo de engenharia estruturado e resultados comprovados.",
   alternates: { canonical: "/" },
 }
 

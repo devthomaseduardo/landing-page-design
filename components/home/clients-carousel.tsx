@@ -29,14 +29,16 @@ export function ClientsCarousel({
           transition={{ duration: 34, ease: "linear", repeat: Infinity }}
         >
           {ALL_CLIENTS.map((client, i) => (
-            <div
+            <motion.div
               key={`${client.name}-${i}`}
-              className="flex h-8 shrink-0 items-center px-1.5 opacity-40 sm:h-10 sm:px-2"
+              className="flex h-8 shrink-0 items-center px-1.5 opacity-40 transition-opacity duration-300 hover:opacity-90 sm:h-10 sm:px-2"
+              whileHover={{ scale: 1.08, y: -2 }}
+              transition={{ type: "spring", stiffness: 400, damping: 22 }}
             >
               <span className="font-display whitespace-nowrap text-base font-semibold uppercase tracking-[0.04em] text-foreground/80 sm:text-xl md:text-2xl">
                 {client.name}
               </span>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

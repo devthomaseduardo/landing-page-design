@@ -98,15 +98,17 @@ export function About() {
               </MobileCarousel>
             </div>
 
-            <div className="hidden sm:block space-y-px">
+            <div className="hidden space-y-2 sm:block" style={{ perspective: "1000px" }}>
               {PILLARS.map((p, index) => (
                 <motion.div
                   key={p.number}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, x: 28, rotateY: -8, rotateX: 6 }}
+                  whileInView={{ opacity: 1, x: 0, rotateY: 0, rotateX: 0 }}
+                  whileHover={{ y: -4, scale: 1.01, rotateX: 2, rotateY: -2 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="group flex gap-6 rounded-2xl border border-border/20 bg-transparent px-6 py-5 transition-all hover:border-border/40 hover:bg-white/[0.015]"
+                  transition={{ duration: 0.5, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ transformStyle: "preserve-3d" }}
+                  className="group flex gap-6 rounded-2xl border border-border/20 bg-transparent px-6 py-5 transition-colors hover:border-border/40 hover:bg-white/[0.02]"
                 >
                   <div className="mt-1 w-8 shrink-0 font-mono text-sm font-medium text-muted-foreground/40">
                     {p.number}
