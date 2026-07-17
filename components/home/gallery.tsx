@@ -12,13 +12,7 @@ export function Gallery() {
   return (
     <section id="gallery" className="relative py-10 sm:py-16 md:py-20 border-y border-border/40">
       <div className="site-shell">
-        <div className="mb-8 flex flex-col gap-2 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-h2 text-foreground">Galeria visual.</h2>
-            <p className="mt-2 max-w-md text-sm text-muted-foreground">
-              Interfaces, sistemas e experiências que construí para clientes e projetos próprios.
-            </p>
-          </div>
+        <div className="mb-8 flex justify-end sm:mb-10">
           <Link
             href="/projetos"
             className="text-xs font-medium uppercase tracking-[0.12em] text-white/50 hover:text-white transition-colors"

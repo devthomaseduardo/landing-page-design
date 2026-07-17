@@ -20,12 +20,16 @@ export function Hero() {
     const video = videoRef.current
     if (!video || reduceMotion || video.seeking) return
 
+    const duration = video.duration
+    if (!Number.isFinite(duration) || duration <= 0) return
+
     const rect = containerRef.current?.getBoundingClientRect()
-    if (!rect) return
+    if (!rect || rect.width <= 0) return
 
     const x = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width))
-    const targetTime = x * (video.duration || 0)
+    const targetTime = x * duration
 
+    if (!Number.isFinite(targetTime)) return
     if (Math.abs(targetTime - video.currentTime) < 0.1) return
 
     video.currentTime = targetTime
@@ -47,7 +51,9 @@ export function Hero() {
     v.muted = true
 
     const startAtMiddle = () => {
-      if (v.duration) v.currentTime = v.duration * 0.5
+      if (Number.isFinite(v.duration) && v.duration > 0) {
+        v.currentTime = v.duration * 0.5
+      }
     }
 
     if (v.readyState >= 1) {
