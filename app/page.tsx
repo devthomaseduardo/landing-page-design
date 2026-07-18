@@ -34,8 +34,9 @@ export default function HomePage() {
       <ProjectsStack />
       <About />
       <TechExpertise />
-      <EngineeringApproach />
       <OliverParallax />
+      <EngineeringApproach />
+
     </>
   )
 }
