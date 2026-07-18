@@ -125,15 +125,22 @@ export function ProjectCard({
             <p className="label-kicker mb-2.5 text-white/45">Tecnologias</p>
             <TechIconRow stack={project.stack} max={7} />
 
-            {project.href && (
+            {(project.href || project.github) && (
               <div
-                className="mt-6"
+                className="mt-6 flex flex-wrap items-center gap-2"
                 onClick={(e) => e.stopPropagation()}
                 onKeyDown={(e) => e.stopPropagation()}
               >
-                <CtaLink href={project.href} variant="soft" size="sm" external>
-                  Ver projeto
-                </CtaLink>
+                {project.href && (
+                  <CtaLink href={project.href} variant="soft" size="sm" external>
+                    Ver projeto
+                  </CtaLink>
+                )}
+                {project.github && (
+                  <CtaLink href={project.github} variant="outline" size="sm" external>
+                    GitHub
+                  </CtaLink>
+                )}
               </div>
             )}
           </div>

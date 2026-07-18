@@ -7,6 +7,7 @@ import { CONTACT } from "@/lib/data"
 import { TechGrid } from "@/components/tech-icon"
 import { PageAnimator } from "@/components/page-animator"
 import { PageHero } from "@/components/page-hero"
+import { ClientsCarousel } from "@/components/home/clients-carousel"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 
@@ -145,6 +146,13 @@ export default function SobrePage() {
           </div>
         </div>
       </section>
+
+      <div className="py-10 sm:py-14 border-t border-border/20">
+        <ClientsCarousel
+          title="Empresas que confiaram no meu trabalho"
+          titleClassName="label-kicker text-muted-foreground/50"
+        />
+      </div>
 
       {/* Metrics - only on About */}
       <section id="metricas" className="border-y border-border/25">
@@ -326,9 +334,6 @@ export default function SobrePage() {
             </CtaLink>
             <CtaLink href="/projetos" variant="soft" size="sm">
               Ver projetos
-            </CtaLink>
-            <CtaLink href="/curriculo" variant="soft" size="sm">
-              Currículo
             </CtaLink>
           </div>
         </div>

@@ -25,8 +25,8 @@ function ProjectItem({
       transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
       className="group overflow-hidden rounded-xl border border-white/12 bg-[#121212] sm:rounded-2xl"
     >
-      <div className="grid sm:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-        <div className="relative aspect-[16/10] bg-black sm:aspect-auto sm:min-h-[220px] md:min-h-[260px]">
+      <div className="flex flex-col lg:grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+        <div className="relative aspect-[16/10] bg-black lg:aspect-auto lg:min-h-[260px]">
           <Image
             src={project.image}
             alt={project.title}
@@ -91,15 +91,22 @@ function ProjectItem({
 
           <div className="mt-5 flex flex-col gap-3 border-t border-white/10 pt-4">
             <TechIconRow stack={project.stack} max={6} />
-            {project.href ? (
-              <CtaLink href={project.href} variant="soft" size="sm" external className="w-fit">
-                Ver projeto
-              </CtaLink>
-            ) : (
-              <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-white/40">
-                <ExternalLink className="size-3" /> Em breve
-              </span>
-            )}
+            <div className="flex flex-wrap items-center gap-2">
+              {project.href ? (
+                <CtaLink href={project.href} variant="soft" size="sm" external className="w-fit">
+                  Ver projeto
+                </CtaLink>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-white/40">
+                  <ExternalLink className="size-3" /> Em breve
+                </span>
+              )}
+              {project.github && (
+                <CtaLink href={project.github} variant="outline" size="sm" external className="w-fit">
+                  GitHub
+                </CtaLink>
+              )}
+            </div>
           </div>
         </div>
       </div>

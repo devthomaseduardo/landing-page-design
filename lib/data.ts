@@ -29,6 +29,7 @@ export type Project = {
   image: string
   gallery?: string[]
   href?: string
+  github?: string
   year?: string
 }
 
@@ -39,18 +40,19 @@ export const PROJECTS: Project[] = [
     tag: "Produto SaaS",
     title: "Áurea",
     subtitle: "Plataforma de Gestão Inteligente",
-    context: "Desenvolvimento de um sistema completo para gestão e inteligência de negócios.",
+    context: "Aurea plataforma comercial empresarial: precificação, propostas, clientes e integrações (Firebase Auth + Firestore)",
     problem: "Necessidade de centralizar operações e dados em uma única plataforma performática.",
     architecture: "Arquitetura moderna escalável com React e integrações via API REST.",
     solution: "Plataforma web rápida, responsiva e focada na experiência do usuário.",
     challenges: "Garantir alta performance com grande volume de dados na interface.",
     result: "Sistema entregue com sucesso, otimizando o tempo operacional.",
-    description: "Sistema Áurea: plataforma completa para gestão.",
+    description: "Aurea plataforma comercial empresarial: precificação, propostas, clientes e integrações (Firebase Auth + Firestore)",
     bullets: ["Painel administrativo", "Gestão de dados em tempo real", "Alta performance"],
-    stack: ["React", "TypeScript", "Tailwind CSS"],
+    stack: ["React", "TypeScript", "Tailwind CSS", "Firebase"],
     image: "/projects/aurea.webp",
     gallery: ["/projects/aurea-1.png", "/projects/aurea-2.png", "/projects/aurea-3.png"],
     href: "https://aurea.thomaseduardo.com.br/",
+    github: "https://github.com/devthomaseduardo/aurea",
     year: "2026",
   },
   {
@@ -95,7 +97,7 @@ export const PROJECTS: Project[] = [
     title: "Homma Design",
     subtitle: "Presença digital para mobiliário autoral",
     context:
-      "A Homma Design precisava de uma presença digital que transmitisse sofisticação, valor dos produtos autorais e a experiência de showroom - com facilidade de contato e apresentação de projetos.",
+      "Website institucional desenvolvido para a Homma Design, uma marca especializada em mobiliário autoral, interiores e curadoria de ambientes sofisticados.",
     problem:
       "Marca de mobiliário autoral e interiores sem site institucional à altura da curadoria offline; dependência de indicações e pouca clareza na comunicação digital.",
     architecture:
@@ -107,7 +109,7 @@ export const PROJECTS: Project[] = [
     result:
       "Presença digital premium que comunica a essência da marca e facilita o contato com o showroom.",
     description:
-      "Website institucional para a Homma Design (mobiliário autoral e interiores), com foco em experiência visual, performance e conversão.",
+      "O projeto foi desenvolvido com foco em experiência visual, performance, responsividade e uma arquitetura preparada para evolução contínua.",
     bullets: [
       "Narrativa visual de showroom",
       "Next.js Static Export + CI/CD",
@@ -185,7 +187,7 @@ export const PROJECTS: Project[] = [
     title: "Minuta Fácil",
     subtitle: "Contratos, NDAs, propostas e CVs com IA",
     context:
-      "Workspace multi-usuário para criar contratos, NDAs, propostas, faturas, currículos e cartas com visual de documento oficial brasileiro e assistência de IA (Gemini).",
+      "Minuta Fácil workspace de contratos, NDAs, propostas e currículos com IA (React + Express + Gemini).",
     problem:
       "Montagem manual de minutas é lenta, inconsistente e sem versionamento por tipo de documento nem perfil por usuário.",
     architecture:
@@ -197,7 +199,7 @@ export const PROJECTS: Project[] = [
     result:
       "Minutas profissionais em minutos, com API REST versionada e painel multi-usuário em produção.",
     description:
-      "Workspace para contratos, NDAs, propostas, faturas e currículos com visual de ofício BR, multi-usuário e IA (Gemini).",
+      "Minuta Fácil workspace de contratos, NDAs, propostas e currículos com IA (React + Express + Gemini).",
     bullets: [
       "Tipos: contrato, NDA, proposta, CV, fatura…",
       "IA de cláusulas (Gemini no backend)",
@@ -208,6 +210,7 @@ export const PROJECTS: Project[] = [
     image: "/projects/minuta-1.png",
     gallery: ["/projects/minuta-2.png", "/projects/minuta-3.png"],
     href: "https://minuta.thomaseduardo.com.br/",
+    github: "https://github.com/devthomaseduardo/minuta-facil",
     year: "2025",
   },
 
@@ -216,7 +219,7 @@ export const PROJECTS: Project[] = [
     title: "Sleep House",
     subtitle: "Showroom digital multi-unidade",
     context:
-      "Plataforma SPA de alta performance para o showroom digital da Sleep House: uma base de código que atende várias filiais via subpastas no domínio.",
+      "Plataforma de alta performance desenvolvida para atuar como o Showroom Digital da Sleep House. O projeto foi construído sob uma arquitetura web moderna (SPA) focada em conversão, experiência do usuário (UX) premium e rastreamento avançado de dados (Analytics).",
     problem:
       "Manter sites separados por loja e páginas pesadas de e-commerce tradicional prejudicava campanhas e a experiência de compra consultiva.",
     architecture:
@@ -228,7 +231,7 @@ export const PROJECTS: Project[] = [
     result:
       "Uma plataforma multi-tenant para Galeria, Polo, Iguatemi e Kenedy - conversão e UX premium em produção.",
     description:
-      "Showroom digital multi-tenant da Sleep House: catálogo, concierge e analytics por unidade, com SPA de alta performance.",
+      "Plataforma de alta performance desenvolvida para atuar como o Showroom Digital da Sleep House. O projeto foi construído sob uma arquitetura web moderna (SPA) focada em conversão, experiência do usuário (UX) premium e rastreamento avançado de dados (Analytics).",
     bullets: [
       "Multi-tenant por subpasta (unidades)",
       "Concierge digital → WhatsApp",
