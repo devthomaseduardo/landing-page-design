@@ -38,26 +38,25 @@
 
 :root {
   color-scheme: dark;
-  /* nik.co inspired: pure black / white / gray - no loud accent */
-  --background: #000000;
-  --foreground: #FFFFFF;
-  --card: #141414;
-  --card-foreground: #FFFFFF;
-  --popover: #000000;
-  --popover-foreground: #FFFFFF;
-  --primary: #FFFFFF;
-  --primary-foreground: #000000;
-  --secondary: #141414;
-  --secondary-foreground: #FFFFFF;
-  --muted: #1a1a1a;
-  /* Brighter secondary type - less “dead gray” */
-  --muted-foreground: #c2c2c2;
-  --accent: #2e2e2e;
-  --accent-foreground: #FFFFFF;
+  /* Premium deep dark blue (slate) theme */
+  --background: #020617; /* slate-950 */
+  --foreground: #f8fafc; /* slate-50 */
+  --card: #0f172a; /* slate-900 */
+  --card-foreground: #f8fafc;
+  --popover: #020617;
+  --popover-foreground: #f8fafc;
+  --primary: #f8fafc;
+  --primary-foreground: #020617;
+  --secondary: #0f172a;
+  --secondary-foreground: #f8fafc;
+  --muted: #0f172a;
+  --muted-foreground: #94a3b8; /* slate-400 */
+  --accent: #1e293b; /* slate-800 */
+  --accent-foreground: #f8fafc;
   --destructive: oklch(0.62 0.2 25);
-  --border: #2e2e2e;
-  --input: #2e2e2e;
-  --ring: #FFFFFF;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #94a3b8;
   --radius: 0.5rem;
 }
 
@@ -135,22 +134,20 @@
   /* Responsive type scale */
   /* Page titles - mobile-safe clamps */
   .text-h1 {
-    font-family: var(--font-display);
-    font-weight: 800;
+    font-family: var(--font-sans);
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.1;
-    text-transform: uppercase;
     font-size: clamp(1.9rem, 7.5vw, 5.25rem);
     max-width: 100%;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
   .text-h2 {
-    font-family: var(--font-display);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.12;
-    text-transform: uppercase;
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    line-height: 1.18;
     font-size: clamp(1.35rem, 4.2vw, 2.5rem);
   }
   /* Line-mask wrappers for reveal animations - extra room on mobile */
@@ -611,4 +608,21 @@
   .animate-arrow-bounce {
     animation: none !important;
   }
+}
+
+/* Custom Spinner */
+.spinner {
+   width: 56px;
+   height: 56px;
+   border-radius: 50%;
+   background: #ffffff; /* Adjusted from #474bff to match monochromatic theme */
+   -webkit-mask: radial-gradient(circle closest-side at 50% 40%,#0000 94%, #000);
+   transform-origin: 50% 40%;
+   animation: spinner-pl92zb 1s infinite linear;
+}
+
+@keyframes spinner-pl92zb {
+   100% {
+      transform: rotate(1turn);
+   }
 }

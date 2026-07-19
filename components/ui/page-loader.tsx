@@ -83,7 +83,7 @@ export function PageLoader() {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black"
+      className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background"
       initial={{ y: 0 }}
       animate={phase === "exit" ? { y: "-100%" } : { y: 0 }}
       transition={{
@@ -96,30 +96,8 @@ export function PageLoader() {
     >
       <span className="sr-only">Carregando</span>
 
-      <div className="flex w-full max-w-[16rem] flex-col items-center gap-8 px-6 sm:max-w-[18rem]">
-        <motion.p
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-sm font-semibold lowercase tracking-[0.22em] text-white sm:text-[15px]"
-        >
-          devthomas
-        </motion.p>
-
-        <div className="w-full">
-          <div className="h-px w-full overflow-hidden bg-white/10">
-            <div
-              className="h-full bg-white transition-[width] duration-75 ease-linear"
-              style={{ width: `${progress}%` }}
-            />
-          </div>
-          <div className="mt-3 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-white/35">
-            <span>loading</span>
-            <span className="tabular-nums text-white/55">
-              {String(progress).padStart(3, "0")}
-            </span>
-          </div>
-        </div>
+      <div className="flex w-full flex-col items-center gap-8 px-6">
+        <div className="spinner"></div>
       </div>
     </motion.div>
   )

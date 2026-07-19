@@ -137,7 +137,7 @@ export function ProjectCard({
                   </CtaLink>
                 )}
                 {project.github && (
-                  <CtaLink href={project.github} variant="outline" size="sm" external>
+                  <CtaLink href={project.github} variant="ghost" size="sm" external>
                     GitHub
                   </CtaLink>
                 )}

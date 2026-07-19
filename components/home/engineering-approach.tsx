@@ -20,7 +20,7 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="label-kicker mb-2 sm:mb-3"
           >
-            Processo
+            Como eu trabalho
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
@@ -28,7 +28,7 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="text-h2 font-normal text-foreground tracking-[-0.02em]"
           >
-            Filosofia de engenharia.
+            Processo de trabalho.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -36,7 +36,7 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="copy-desktop mt-3 text-base font-light leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Entender o problema, projetar com clareza e entregar com confiabilidade.
+            Sem caixa preta. Entender o problema, projetar com clareza e entregar com confiabilidade — em cada etapa do projeto.
           </motion.p>
         </div>
 

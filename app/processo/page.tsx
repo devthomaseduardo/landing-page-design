@@ -129,7 +129,7 @@ export default function ProcessPage() {
                   {/* Content Container */}
                   <div className="absolute inset-0 p-4 sm:p-8 flex flex-col justify-end z-10">
                     <div className="flex items-center gap-3 sm:gap-4">
-                      <span className={`flex size-8 sm:size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border font-display text-sm sm:text-xl font-bold transition-all duration-500 ${
+                      <span className={`flex size-8 sm:size-12 shrink-0 items-center justify-center rounded-xl sm:rounded-2xl border font-mono text-sm sm:text-base font-semibold transition-all duration-500 ${
                         isActive ? "border-white/20 bg-white/10 text-white" : "border-white/10 bg-white/5 text-white/40"
                       }`}>
                         {item.step}
@@ -138,7 +138,7 @@ export default function ProcessPage() {
                       <motion.h3 
                         animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -20 }}
                         transition={{ duration: 0.4, delay: isActive ? 0.1 : 0 }}
-                        className="text-xl sm:text-3xl font-display font-semibold tracking-tight text-white whitespace-nowrap"
+                        className="text-xl sm:text-3xl font-sans font-semibold tracking-tight text-white whitespace-nowrap"
                       >
                         {item.title}
                       </motion.h3>
@@ -313,7 +313,7 @@ export default function ProcessPage() {
         <div className="mx-auto w-full max-w-3xl px-5 sm:px-6">
           <div className="mb-12 sm:mb-16 text-center">
             <p className="font-mono text-[10px] uppercase tracking-widest text-white/50 mb-4">Dúvidas?</p>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-white">Perguntas frequentes.</h2>
+            <h2 className="font-sans text-3xl sm:text-4xl font-semibold tracking-tight text-white">Perguntas frequentes.</h2>
           </div>
           <div className="divide-y divide-white/10 border-t border-white/10">
             {FAQ.map((item, i) => (
@@ -341,7 +341,7 @@ export default function ProcessPage() {
           <div className="hero-frame animate-frame-glow overflow-hidden border border-white/15 bg-gradient-to-b from-white/10 to-black p-12 sm:p-20 shadow-2xl relative rounded-3xl">
             <div className="absolute inset-0 bg-grid-fade opacity-20 pointer-events-none" />
             <div className="relative z-10">
-              <h2 className="text-4xl sm:text-5xl font-display font-bold tracking-tight text-white mb-6">
+              <h2 className="text-4xl sm:text-5xl font-sans font-semibold tracking-tight text-white mb-6">
                 Vamos conversar
                 <br />
                 <span className="text-white/40">sobre o seu projeto?</span>

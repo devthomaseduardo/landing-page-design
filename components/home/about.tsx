@@ -8,17 +8,17 @@ const PILLARS = [
   {
     number: "01",
     title: "Produto",
-    text: "Decisões técnicas guiadas pelo impacto no usuário e no negócio.",
+    text: "Decisões técnicas guiadas pelo impacto real no usuário e no resultado do negócio.",
   },
   {
     number: "02",
     title: "Engenharia",
-    text: "Código limpo, arquiteturas escaláveis e sistemas que crescem bem.",
+    text: "Sistemas escaláveis, código limpo e arquiteturas que crescem junto com sua empresa.",
   },
   {
     number: "03",
     title: "Confiança",
-    text: "Sistemas previsíveis, observáveis e com deploys seguros.",
+    text: "Entrega previsível, observação em produção e deploys seguros — sem surpresas.",
   },
 ]
 
@@ -63,7 +63,7 @@ export function About() {
               className="mt-10 hidden lg:block"
             >
               <CtaLink href={CONTACT.whatsapp} variant="solid" size="md" external>
-                Falar comigo
+                Pare de perder dinheiro com software. Fale comigo.
               </CtaLink>
             </motion.div>
           </div>
@@ -77,10 +77,10 @@ export function About() {
               className="max-w-[45ch] space-y-6 text-[15px] leading-relaxed text-muted-foreground/80 sm:text-base md:text-[17px]"
             >
               <p>
-                Engenheiro de software na intersecção entre backend robusto e interfaces que funcionam de verdade. Sistemas que escalam com elegância e falham de forma previsível.
+                Engenheiro de software na intersecção entre backend robusto e interfaces que funcionam de verdade. Não vendo código — vendo sistemas que geram valor e resolvem problemas reais de negócio.
               </p>
               <p>
-                Abordagem pragmática: menos complexidade, lógica de domínio clara e frontend como extensão de uma boa arquitetura.
+                Abordagem pragmática e consultiva: entendo o problema antes de qualquer linha de código, projeto com clareza e entrego com previsibilidade. Porque uma arquitetura sólida não é custo, é investimento.
               </p>
             </motion.div>
 
@@ -123,7 +123,7 @@ export function About() {
               className="mt-2 lg:hidden"
             >
               <CtaLink href={CONTACT.whatsapp} variant="solid" size="md" external>
-                Falar comigo
+                Pare de perder dinheiro com software
               </CtaLink>
             </motion.div>
 

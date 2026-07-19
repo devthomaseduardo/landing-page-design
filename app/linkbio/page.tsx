@@ -53,7 +53,7 @@ const LINKS = [
 
 export default function LinkBioPage() {
   return (
-    <div className="relative min-h-[100svh] w-full overflow-hidden bg-black flex items-center justify-center p-4 sm:p-6">
+    <div className="relative min-h-[100svh] w-full overflow-hidden bg-background flex items-center justify-center p-4 sm:p-6">
       {/* Hide site nav and footer via CSS to keep this page isolated like a modal */}
       <style dangerouslySetInnerHTML={{ __html: `
         header, footer, .floating-whatsapp { display: none !important; }

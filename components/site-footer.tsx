@@ -16,7 +16,7 @@ export function SiteFooter() {
     return null
 
   return (
-    <footer className="relative z-40 mt-auto border-t border-white/5 bg-black pt-10 pb-28 sm:pb-10">
+    <footer className="relative z-40 mt-auto border-t border-white/5 bg-background pt-10 pb-28 sm:pb-10">
       <div className="site-shell">
         <div className="mb-8 flex flex-col gap-6 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">

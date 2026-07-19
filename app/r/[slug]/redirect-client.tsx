@@ -29,7 +29,7 @@ export function RedirectClient({ entry }: { entry: RedirectEntry }) {
   }, [entry])
 
   return (
-    <main className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden bg-black px-6">
+    <main className="relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden bg-background px-6">
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_40%,rgba(255,255,255,0.06),transparent_60%)]"

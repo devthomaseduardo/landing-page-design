@@ -102,7 +102,7 @@ function ProjectItem({
                 </span>
               )}
               {project.github && (
-                <CtaLink href={project.github} variant="outline" size="sm" external className="w-fit">
+                <CtaLink href={project.github} variant="ghost" size="sm" external className="w-fit">
                   GitHub
                 </CtaLink>
               )}
@@ -120,9 +120,9 @@ export default function ProjetosPage() {
       <PageAnimator />
 
       <PageHero
-        kicker="Trabalhos"
+        kicker="Portfólio · Casos Reais"
         lines={["Projetos selecionados."]}
-        description="Sistemas e produtos com foco em escalabilidade, performance e resultado real."
+        description="Sistemas e produtos entregues com foco em resultado de negócio — da arquitetura ao deploy, com previsibilidade e qualidade."
       />
 
       <div className="mb-8 sm:mb-10">
@@ -145,10 +145,10 @@ export default function ProjetosPage() {
             <div className="relative z-10">
               <p className="label-kicker text-white/45 mb-2">Open Source</p>
               <h3 className="text-2xl sm:text-3xl font-display font-semibold text-white tracking-tight mb-3">
-                Quer ver mais projetos?
+                Quer ver o código por trás dos projetos?
               </h3>
               <p className="text-white/70 leading-relaxed mb-6 max-w-md text-sm sm:text-base">
-                Confira meu GitHub para explorar mais códigos, contribuições e a arquitetura detalhada de outros experimentos técnicos.
+                Arquitetura, padrões de código e decisões técnicas detalhadas nos repositórios. Um portfólio aberto de como construo software de qualidade.
               </p>
               <CtaLink href={CONTACT.github} variant="solid" size="md" external>
                 Acessar meu GitHub

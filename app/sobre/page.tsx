@@ -8,6 +8,8 @@ import { TechGrid } from "@/components/tech-icon"
 import { PageAnimator } from "@/components/page-animator"
 import { PageHero } from "@/components/page-hero"
 import { ClientsCarousel } from "@/components/home/clients-carousel"
+import FadeThrough from "@/components/ui/smoothui/fade-through"
+import DepthParallaxWords from "@/components/ui/smoothui/depth-parallax-words"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 
@@ -83,7 +85,12 @@ export default function SobrePage() {
       <PageHero
         kicker="Sobre · São Paulo"
         lines={["Thomas", "Eduardo."]}
-        description="Product Engineer · Full Stack. Produtos digitais do zero à produção."
+        description={
+          <>
+            Product Engineer · Full Stack. Produtos digitais do zero à{" "}
+            <FadeThrough phrases={["produção.", "escala.", "receita."]} className="font-medium text-white" />
+          </>
+        }
       />
 
       {/* Bento intro */}
@@ -97,9 +104,15 @@ export default function SobrePage() {
             >
               <p className="label-kicker mb-4">Perfil</p>
               <h2 className="text-h2 font-normal tracking-[-0.02em] text-foreground">
-                Produtos digitais
+                <DepthParallaxWords triggerOnView delay={100} stagger={60}>
+                  Produtos digitais
+                </DepthParallaxWords>
                 <br />
-                <span className="text-muted-foreground">do zero à produção.</span>
+                <span className="text-muted-foreground">
+                  <DepthParallaxWords triggerOnView delay={300} stagger={60}>
+                    do zero à produção.
+                  </DepthParallaxWords>
+                </span>
               </h2>
               <p className="mt-4 max-w-lg text-sm font-light leading-relaxed text-white/70 sm:text-base">
                 Full Stack com 3+ anos de freela. Transformo processos manuais em
@@ -312,7 +325,7 @@ export default function SobrePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden border-t border-border/15 bg-black py-14 sm:py-20">
+      <section className="relative overflow-hidden border-t border-border/15 bg-background py-14 sm:py-20">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_50%_60%_at_50%_100%,rgba(255,255,255,0.06),transparent_60%)]"

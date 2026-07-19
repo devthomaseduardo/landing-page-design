@@ -40,7 +40,7 @@ export function PageHero({
 }: {
   kicker: string
   title?: string
-  description?: string
+  description?: React.ReactNode
   lines?: string[]
   light?: boolean
   size?: "default" | "sm"
@@ -73,7 +73,7 @@ export function PageHero({
         </motion.p>
 
         <h1
-          className={`font-display font-extrabold uppercase tracking-[-0.03em] ${
+          className={`font-sans font-semibold tracking-[-0.03em] ${
             light ? "text-white" : "text-foreground"
           }`}
           style={{
@@ -81,7 +81,7 @@ export function PageHero({
               size === "sm"
                 ? "clamp(1.55rem, 5.8vw, 3rem)"
                 : "clamp(1.9rem, 7.5vw, 5rem)",
-            lineHeight: 1.12,
+            lineHeight: 1.15,
           }}
         >
           {titleLines.map((line, i) => (
@@ -115,12 +115,7 @@ export function PageHero({
               light ? "text-white/55" : "text-muted-foreground"
             }`}
           >
-            <span className="sm:hidden">
-              {description.length > 90
-                ? `${description.slice(0, 88).trim()}…`
-                : description}
-            </span>
-            <span className="hidden sm:inline">{description}</span>
+            <span>{description}</span>
           </motion.p>
         )}
       </div>

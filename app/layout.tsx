@@ -146,18 +146,15 @@ export default function RootLayout({
       className={`dark ${inter.variable} ${mono.variable} ${display.variable} ${signature.variable} bg-background`}
       suppressHydrationWarning
     >
-      <head>
-        <script
+      <body className="font-sans font-light antialiased overflow-x-hidden" suppressHydrationWarning={true}>
+        {/* Loader class injection — must run before React paints anything */}
+        <Script
+          id="loader-boot"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `document.documentElement.classList.add('loader-boot','loader-active')`,
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="font-sans font-light antialiased overflow-x-hidden" suppressHydrationWarning={true}>
 
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -169,6 +166,14 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
+
+        {/* JSON-LD Structured Data */}
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
         {/* Google Tag Manager */}
         <Script
