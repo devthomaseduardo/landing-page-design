@@ -6,6 +6,7 @@ import { PROJECTS } from "@/lib/data"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { ProjectCard } from "@/components/project-card"
 import { ArrowDown, ArrowRight } from "lucide-react"
+import { useI18n } from "@/lib/i18n/context"
 
 export function ProjectsStack({
   projects = PROJECTS.slice(0, 6),
@@ -15,6 +16,7 @@ export function ProjectsStack({
   hideHeader?: boolean
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const { t } = useI18n()
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -47,7 +49,7 @@ export function ProjectsStack({
                   viewport={{ once: true }}
                   className="label-kicker mb-2 sm:mb-3"
                 >
-                  Trabalhos
+                  {t.projects.kicker}
                 </motion.p>
                 <motion.h2
                   initial={{ opacity: 0, y: 14 }}
@@ -56,7 +58,7 @@ export function ProjectsStack({
                   transition={{ duration: 0.5 }}
                   className="text-h2 font-normal tracking-[-0.02em] text-foreground"
                 >
-                  Projetos selecionados.
+                  {t.projects.heading}
                 </motion.h2>
               </div>
 
@@ -70,7 +72,7 @@ export function ProjectsStack({
                   href="/projetos"
                   className="group inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.12em] text-white/50 transition-colors hover:text-white"
                 >
-                  Ver todos
+                  {t.projects.viewAll}
                   <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
               </motion.div>
@@ -98,7 +100,7 @@ export function ProjectsStack({
               href="/projetos"
               className="group inline-flex items-center gap-1.5 text-xs font-medium uppercase tracking-[0.12em] text-white/55 transition-colors hover:text-white"
             >
-              Ver todos os projetos
+              {t.projects.viewAllMobile}
               <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>

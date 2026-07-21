@@ -4,9 +4,11 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { CONTACT } from "@/lib/data"
+import { useI18n } from "@/lib/i18n/context"
 
 export function SiteFooter() {
   const pathname = usePathname()
+  const { t } = useI18n()
 
   if (
     pathname === "/linkbio" ||
@@ -20,7 +22,7 @@ export function SiteFooter() {
       <div className="site-shell">
         <div className="mb-8 flex flex-col gap-6 sm:mb-10 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col gap-1">
-            <p className="label-kicker text-white/55">Disponível para projetos</p>
+            <p className="label-kicker text-white/55">{t.footer.available}</p>
             <a
               href={`mailto:${CONTACT.email}`}
               className="text-sm font-light text-white/90 transition-colors hover:text-white sm:text-base"
@@ -31,10 +33,9 @@ export function SiteFooter() {
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-5">
             {[
-              { href: "/", label: "Início" },
-              { href: "/sobre", label: "Sobre" },
-              { href: "/projetos", label: "Projetos" },
-              { href: "/valores", label: "Valores" },
+              { href: "/", label: t.nav.home },
+              { href: "/sobre", label: t.nav.about },
+              { href: "/projetos", label: t.nav.projects },
             ].map((l) => (
               <Link
                 key={l.href}

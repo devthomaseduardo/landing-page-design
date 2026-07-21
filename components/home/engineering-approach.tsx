@@ -4,10 +4,12 @@ import { ENGINEERING_APPROACH } from "@/lib/data"
 import { Search, Network, Code, TestTube, Rocket, IterationCcw } from "lucide-react"
 import { motion } from "framer-motion"
 import { Shape6 } from "@/components/ui/abstract-shapes"
+import { useI18n } from "@/lib/i18n/context"
 
 const ICONS = [Search, Network, Code, TestTube, Rocket, IterationCcw]
 
 export function EngineeringApproach() {
+  const { t } = useI18n()
   return (
     <section
       id="engineering"
@@ -29,7 +31,7 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="label-kicker mb-2 sm:mb-3 text-white/40"
           >
-            Sem surpresas durante o projeto
+            {t.engineering.kicker}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 14 }}
@@ -37,7 +39,7 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="text-h2 font-normal text-foreground tracking-[-0.02em] text-balance"
           >
-            Um processo transparente do primeiro contato até a entrega.
+            {t.engineering.heading}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -45,12 +47,12 @@ export function EngineeringApproach() {
             viewport={{ once: true }}
             className="mt-4 text-base font-light leading-relaxed text-muted-foreground sm:text-lg"
           >
-            Você acompanha cada etapa do desenvolvimento e sabe exatamente o que está sendo construído. Cronograma definido, escopo documentado, aprovação em cada etapa e código entregue ao final.
+            {t.engineering.body}
           </motion.p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-3 lg:grid-cols-3">
-          {ENGINEERING_APPROACH.map((item, i) => {
+          {t.engineering.steps.map((item, i) => {
             const Icon = ICONS[i] || Code
             return (
               <div

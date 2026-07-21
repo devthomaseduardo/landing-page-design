@@ -4,26 +4,10 @@ import { motion } from "framer-motion"
 import { CONTACT } from "@/lib/data"
 import { CtaLink } from "@/components/ui/cta"
 import { Shape2 } from "@/components/ui/abstract-shapes"
-
-const PILLARS = [
-  {
-    number: "01",
-    title: "Produto",
-    text: "Decisões técnicas guiadas pelo impacto real no usuário e no resultado do negócio.",
-  },
-  {
-    number: "02",
-    title: "Engenharia",
-    text: "Sistemas escaláveis, código limpo e arquiteturas que crescem junto com sua empresa.",
-  },
-  {
-    number: "03",
-    title: "Confiança",
-    text: "Sem dores de cabeça com atrasos. Projetos escaláveis, focados em gerar receita desde o primeiro dia de lançamento.",
-  },
-]
+import { useI18n } from "@/lib/i18n/context"
 
 export function About() {
+  const { t } = useI18n()
   return (
     <section
       id="about"
@@ -48,7 +32,7 @@ export function About() {
               viewport={{ once: true }}
               className="mb-8 flex items-center gap-4 sm:mb-12"
             >
-              <span className="label-kicker text-muted-foreground/60">Perfil</span>
+              <span className="label-kicker text-muted-foreground/60">{t.about.kicker}</span>
               <div className="h-px w-12 bg-border/40" />
             </motion.div>
 
@@ -59,9 +43,9 @@ export function About() {
               transition={{ duration: 0.6 }}
               className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-medium leading-[0.92] tracking-[-0.04em] text-foreground"
             >
-              Produto.<br />
-              Engenharia.<br />
-              <span className="text-white/30">Confiança.</span>
+              {t.about.headingLine1}<br />
+              {t.about.headingLine2}<br />
+              <span className="text-white/30">{t.about.headingLine3}</span>
             </motion.h2>
 
             <motion.div
@@ -72,7 +56,7 @@ export function About() {
               className="mt-10 hidden lg:block"
             >
               <CtaLink href={CONTACT.whatsapp} variant="solid" size="md" external>
-                Pare de perder dinheiro com software. Fale comigo.
+                {t.about.cta}
               </CtaLink>
             </motion.div>
           </div>
@@ -85,18 +69,14 @@ export function About() {
               viewport={{ once: true }}
               className="max-w-[45ch] space-y-6 text-[15px] leading-relaxed text-muted-foreground/80 sm:text-base md:text-[17px]"
             >
-              <p>
-                Um negócio estagnado digitalmente perde muito dinheiro. Minha missão é acabar com sistemas ineficientes e páginas lentas. Não vendo apenas código, entrego verdadeiras máquinas de conversão para colocar o seu faturamento em outro patamar.
-              </p>
-              <p>
-                Abordagem pragmática e consultiva: entendo o problema antes de qualquer linha de código, projeto com clareza e entrego com previsibilidade. Porque uma arquitetura sólida não é custo, é investimento.
-              </p>
+              <p>{t.about.p1}</p>
+              <p>{t.about.p2}</p>
             </motion.div>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              {PILLARS.map((p, index) => (
+              {t.about.pillars.map((p, index) => (
                 <motion.div
-                  key={p.number}
+                  key={p.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   whileHover={{ y: -4, scale: 1.01 }}
@@ -106,10 +86,9 @@ export function About() {
                     index === 0 ? "sm:col-span-2" : ""
                   }`}
                 >
-
                   <div className="relative z-10 flex flex-col gap-4 sm:gap-6">
                     <div className="flex size-10 items-center justify-center rounded-full border border-white/10 bg-white/5 font-mono text-xs font-medium text-white/50">
-                      {p.number}
+                      {String(index + 1).padStart(2, "0")}
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-semibold tracking-[-0.01em] text-foreground sm:text-xl">
@@ -132,7 +111,7 @@ export function About() {
               className="mt-2 lg:hidden"
             >
               <CtaLink href={CONTACT.whatsapp} variant="solid" size="md" external>
-                Pare de perder dinheiro com software
+                {t.about.ctaMobile}
               </CtaLink>
             </motion.div>
 

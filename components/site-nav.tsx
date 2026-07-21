@@ -6,21 +6,23 @@ import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { cn } from "@/lib/utils"
-
-const LINKS = [
-  { href: "/", label: "Início" },
-  { href: "/sobre", label: "Sobre" },
-  { href: "/projetos", label: "Projetos" },
-  { href: "/processo", label: "Processos" },
-]
-
-const WHATSAPP =
-  "https://wa.me/5511977070209?text=Ol%C3%A1%20Thomas%2C%20quero%20falar%20sobre%20um%20projeto."
+import { useI18n } from "@/lib/i18n/context"
 
 export function SiteNav() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const { locale, toggleLocale, t } = useI18n()
+
+  const LINKS = [
+    { href: "/", label: t.nav.home },
+    { href: "/sobre", label: t.nav.about },
+    { href: "/projetos", label: t.nav.projects },
+    { href: "/processo", label: t.nav.process },
+  ]
+
+  const WHATSAPP =
+    "https://wa.me/5511977070209?text=Ol%C3%A1%20Thomas%2C%20quero%20falar%20sobre%20um%20projeto."
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -85,8 +87,17 @@ export function SiteNav() {
             rel="noopener noreferrer"
             className="ml-0.5 rounded-full bg-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.14em] text-white/80 transition-colors hover:bg-white/15 hover:text-white"
           >
-            Contato
+            {t.nav.contact}
           </a>
+          {/* Language Toggle */}
+          <button
+            type="button"
+            onClick={toggleLocale}
+            className="ml-1 rounded-full border border-white/15 px-2.5 py-1.5 text-[10px] font-medium uppercase tracking-[0.14em] text-white/60 transition-all hover:border-white/30 hover:text-white"
+            aria-label="Toggle language"
+          >
+            {locale === "pt-BR" ? "EN" : "PT"}
+          </button>
         </nav>
 
         {/* Spacer to balance logo width on desktop */}
@@ -133,8 +144,16 @@ export function SiteNav() {
               onClick={() => setOpen(false)}
               className="mt-1 rounded-xl bg-white px-3 py-2.5 text-center text-xs font-medium uppercase tracking-[0.12em] text-black"
             >
-              Contato
+              {t.nav.contact}
             </a>
+            {/* Language Toggle Mobile */}
+            <button
+              type="button"
+              onClick={() => { toggleLocale(); setOpen(false) }}
+              className="mt-1 rounded-xl border border-white/15 px-3 py-2.5 text-center text-xs font-medium uppercase tracking-[0.12em] text-white/60 transition-colors hover:text-white"
+            >
+              {locale === "pt-BR" ? "🇺🇸 English" : "🇧🇷 Português"}
+            </button>
           </div>
         </div>
       )}

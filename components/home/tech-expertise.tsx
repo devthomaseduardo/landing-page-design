@@ -3,53 +3,55 @@
 import { motion } from "framer-motion"
 import { Icon } from "@iconify/react"
 import { Shape4 } from "@/components/ui/abstract-shapes"
-
-const EXPERTISE = [
-  {
-    category: "Frontend",
-    description: "Interfaces modernas e de alta performance.",
-    techs: [
-      { name: "React", icon: "logos:react" },
-      { name: "Next.js", icon: "logos:nextjs-icon" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-      { name: "Tailwind", icon: "logos:tailwindcss-icon" },
-      { name: "Framer Motion", icon: "simple-icons:framer" },
-    ],
-  },
-  {
-    category: "Backend",
-    description: "APIs robustas e lógica de negócio escalável.",
-    techs: [
-      { name: "Node.js", icon: "logos:nodejs-icon" },
-      { name: "Fastify", icon: "logos:fastify-icon" },
-      { name: "Express", icon: "simple-icons:express" },
-      { name: "REST API", icon: "simple-icons:openapiinitiative" },
-      { name: "JWT", icon: "simple-icons:jsonwebtokens" },
-    ],
-  },
-  {
-    category: "Banco de Dados",
-    description: "Modelagem com ORMs modernos.",
-    techs: [
-      { name: "PostgreSQL", icon: "logos:postgresql" },
-      { name: "Prisma", icon: "simple-icons:prisma" },
-      { name: "MongoDB", icon: "logos:mongodb-icon" },
-    ],
-  },
-  {
-    category: "Infraestrutura",
-    description: "Deploy e pipelines em produção.",
-    techs: [
-      { name: "Docker", icon: "logos:docker-icon" },
-      { name: "AWS", icon: "logos:aws" },
-      { name: "Vercel", icon: "logos:vercel-icon" },
-      { name: "Linux", icon: "logos:linux-tux" },
-      { name: "Git", icon: "logos:git-icon" },
-    ],
-  },
-]
+import { useI18n } from "@/lib/i18n/context"
 
 export function TechExpertise() {
+  const { t } = useI18n()
+
+  const EXPERTISE = [
+    {
+      category: t.techExpertise.groups[0].category,
+      description: t.techExpertise.groups[0].description,
+      techs: [
+        { name: "React", icon: "logos:react" },
+        { name: "Next.js", icon: "logos:nextjs-icon" },
+        { name: "TypeScript", icon: "logos:typescript-icon" },
+        { name: "Tailwind", icon: "logos:tailwindcss-icon" },
+        { name: "Framer Motion", icon: "simple-icons:framer" },
+      ],
+    },
+    {
+      category: t.techExpertise.groups[1].category,
+      description: t.techExpertise.groups[1].description,
+      techs: [
+        { name: "Node.js", icon: "logos:nodejs-icon" },
+        { name: "Fastify", icon: "logos:fastify-icon" },
+        { name: "Express", icon: "simple-icons:express" },
+        { name: "REST API", icon: "simple-icons:openapiinitiative" },
+        { name: "JWT", icon: "simple-icons:jsonwebtokens" },
+      ],
+    },
+    {
+      category: t.techExpertise.groups[2].category,
+      description: t.techExpertise.groups[2].description,
+      techs: [
+        { name: "PostgreSQL", icon: "logos:postgresql" },
+        { name: "Prisma", icon: "simple-icons:prisma" },
+        { name: "MongoDB", icon: "logos:mongodb-icon" },
+      ],
+    },
+    {
+      category: t.techExpertise.groups[3].category,
+      description: t.techExpertise.groups[3].description,
+      techs: [
+        { name: "Docker", icon: "logos:docker-icon" },
+        { name: "AWS", icon: "logos:aws" },
+        { name: "Vercel", icon: "logos:vercel-icon" },
+        { name: "Linux", icon: "logos:linux-tux" },
+        { name: "Git", icon: "logos:git-icon" },
+      ],
+    },
+  ]
   return (
     <section
       id="expertise"
@@ -82,8 +84,8 @@ export function TechExpertise() {
               viewport={{ once: true }}
               className="text-h2 text-foreground"
             >
-              <span className="sm:hidden">Stack.</span>
-              <span className="hidden sm:inline">Ferramentas & tecnologias.</span>
+              <span className="sm:hidden">{t.techExpertise.headingMobile}</span>
+              <span className="hidden sm:inline">{t.techExpertise.headingDesktop}</span>
             </motion.h2>
           </div>
           <motion.p
@@ -92,7 +94,7 @@ export function TechExpertise() {
             viewport={{ once: true }}
             className="copy-desktop max-w-xs text-sm font-light leading-relaxed text-muted-foreground sm:text-right"
           >
-            Stack moderna, em uso em projetos reais.
+            {t.techExpertise.subtitle}
           </motion.p>
         </div>
 

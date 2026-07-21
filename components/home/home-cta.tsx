@@ -5,8 +5,10 @@ import { CONTACT } from "@/lib/data"
 import { CtaLink } from "@/components/ui/cta"
 import DepthParallaxWords from "@/components/ui/smoothui/depth-parallax-words"
 import { Shape9 } from "@/components/ui/abstract-shapes"
+import { useI18n } from "@/lib/i18n/context"
 
 export function HomeCta() {
+  const { t } = useI18n()
   return (
     <section className="relative overflow-hidden border-t border-border/20 bg-background py-16 sm:py-20 md:py-24">
       <div
@@ -29,17 +31,17 @@ export function HomeCta() {
           viewport={{ once: true }}
           className="label-kicker mb-4 text-white/40"
         >
-          Próximo passo
+          {t.homeCta.kicker}
         </motion.p>
 
         <div className="mx-auto max-w-4xl font-sans text-center font-semibold leading-[1.05] tracking-[-0.03em] text-white" style={{ fontSize: "clamp(1.5rem, 5vw, 3.5rem)" }}>
           <DepthParallaxWords triggerOnView delay={100} stagger={80}>
-            O próximo sistema da
+            {t.homeCta.line1}
           </DepthParallaxWords>
           <br />
           <span className="text-white/40">
             <DepthParallaxWords triggerOnView delay={300} stagger={70}>
-              sua empresa pode começar hoje.
+              {t.homeCta.line2}
             </DepthParallaxWords>
           </span>
         </div>
@@ -50,7 +52,7 @@ export function HomeCta() {
           viewport={{ once: true }}
           className="mx-auto mt-5 max-w-lg text-sm font-light text-white/60 sm:mt-6 sm:text-base leading-relaxed"
         >
-          Solicite uma análise gratuita do seu projeto. Em até 24 horas você recebe um plano inicial com escopo, prazo e estimativa de investimento.
+          {t.homeCta.body}
         </motion.p>
 
         <motion.div
@@ -60,10 +62,10 @@ export function HomeCta() {
           className="mt-7 flex flex-col items-center justify-center gap-2.5 min-[420px]:flex-row sm:mt-8"
         >
           <CtaLink href={CONTACT.whatsapp} variant="solid" external>
-            Solicitar análise gratuita
+            {t.homeCta.ctaPrimary}
           </CtaLink>
           <CtaLink href="/projetos" variant="soft">
-            Ver todos os projetos
+            {t.homeCta.ctaSecondary}
           </CtaLink>
         </motion.div>
       </div>

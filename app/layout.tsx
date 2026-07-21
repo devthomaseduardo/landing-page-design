@@ -13,6 +13,7 @@ import { CustomCursor } from "@/components/ui/custom-cursor"
 import { PageLoader } from "@/components/ui/page-loader"
 import { PageTransition } from "@/components/page-transition"
 import { Toaster } from "sileo"
+import { I18nProvider } from "@/lib/i18n/context"
 import "./globals.css"
 
 // nik.co vibe: Suisse Int'l → Inter (body), Heathergreen → Syne (display)
@@ -215,7 +216,8 @@ gtag('config', 'G-V95BP4VGFX');`,
 posthog.init('phc_wNUQSvKvfSVPCDCh7DTHk7hzkSc7A4agRv6LLAWWr2qn',{api_host:'https://www.thomaseduardo.com.br',ui_host:'https://us.posthog.com',defaults:'2026-05-30',person_profiles:'identified_only'});`,
           }}
         />
-        <SmoothScroll>
+        <I18nProvider>
+          <SmoothScroll>
           <PageLoader />
           <CustomCursor />
           <Toaster position="top-right" />
@@ -227,7 +229,8 @@ posthog.init('phc_wNUQSvKvfSVPCDCh7DTHk7hzkSc7A4agRv6LLAWWr2qn',{api_host:'https
           <SiteFooter />
           <Analytics />
           <SpeedInsights />
-        </SmoothScroll>
+          </SmoothScroll>
+        </I18nProvider>
       </body>
     </html>
   )

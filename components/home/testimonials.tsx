@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Quote } from "lucide-react"
 import Avatar from "boring-avatars"
+import { useI18n } from "@/lib/i18n/context"
 
 const REVIEWS = [
   {
@@ -89,6 +90,7 @@ function ReviewCard({
 }
 
 export function Testimonials() {
+  const { t } = useI18n()
   return (
     <section
       id="depoimentos"
@@ -106,8 +108,8 @@ export function Testimonials() {
           viewport={{ once: true }}
           className="label-kicker mb-3 text-muted-foreground/60"
         >
-          Depoimentos
-        </motion.p>
+          {t.testimonials.kicker}
+          </motion.p>
         <motion.h2
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,7 +117,7 @@ export function Testimonials() {
           transition={{ duration: 0.6 }}
           className="text-h2 max-w-xl font-normal text-foreground tracking-[-0.02em]"
         >
-          O que dizem os clientes.
+          {t.testimonials.heading}
         </motion.h2>
       </div>
 
